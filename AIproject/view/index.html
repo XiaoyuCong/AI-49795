@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type = "text/css" href="css/1.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        
+    </head>
+
+    <body>
+        <script>
+            function changImg(e){ 
+                for (var i = 0; i < e.target.files.length; i++) {
+                    var file = e.target.files.item(i);
+                    if (!(/^image\/.*$/i.test(file.type))) {
+                        alert("can only upload image");
+                        continue; 
+                    }
+                    var freader = new FileReader();  
+                    freader.readAsDataURL(file);  
+                    freader.onload = function(e) {  
+                        $("#image").attr("src",e.target.result);  
+                    }  
+                }  
+            }  
+        </script>
+        <h1>Emousic</h1>
+        <p>try emousic in 3 easy steps!!</p>
+        <p>1.take a photo of yourself now!</p>
+        <p>2.upload your photo here</p>
+        <center>
+                <form action="http://127.0.0.1:8082/uploadImage" method="post" enctype="multipart/form-data">  
+                    <input type="file" name="files" accept="image/*" onchange="changImg(event)" > 
+                    </br> 
+                    <img id="image" src="" >  
+                    </br>
+                    <input type="submit" value="upload this image"/>
+                </form>  
+         </center>
+        <p>3.enjoy!</p>
+    </body>
