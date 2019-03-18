@@ -28,51 +28,50 @@ app.post('/uploadImage', function(req,res){
 
     const form = new multiparty.Form();
     form.parse(req,function(err,fields,files){
-        console.log(fields);
-        console.log(files);
-        console.log(files['files'][0]['originalFilename']);
-        const fileName = path.basename(files['files'][0]['originalFilename']);
-        console.log(fileName);
+        // console.log(fields);
+        // console.log(files);
+        // console.log(files['files'][0]['originalFilename']);
+        // const fileName = path.basename(files['files'][0]['originalFilename']);
+        // console.log(fileName);
         // const file = bucket.file(fileName);
         // console.log('file:' + file);
-        bucket.upload(files['files'][0]['path'])
-            .then();
-            // .then(() => file.makePublic());
+        bucket.upload(files['files'][0]['path']).then();
+        const tmpName = files['files'][0]['path'].split("/").slice(-1)[0];
 
-        const imageUrl = `https://storage.googleapis.com/emousic_image/${fileName}`;
+        const imageUrl = `https://storage.googleapis.com/emousic_image/${tmpName}`;
         console.log(imageUrl);
-//         const subscriptionKey = 'd56a4c64612f411eaebddccb1038fccd';
-//
-//         const uriBase = 'https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect';
-//
-//         // const imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/3/37/Dagestani_man_and_woman.jpg';
-//
-// // Request parameters.
-//         const params = {
-//             'returnFaceId': 'true',
-//             'returnFaceLandmarks': 'false',
-//             'returnFaceAttributes': 'emotion'
-//         };
-//
-//         const options = {
-//             uri: uriBase,
-//             qs: params,
-//             body: '{"url": ' + '"' + imageUrl + '"}',
-//             headers: {
-//                 'Content-Type': 'application/json',
-//                 'Ocp-Apim-Subscription-Key' : subscriptionKey
-//             }
-//         };
-//
-//         request.post(options, (error, response, body) => {
-//             if (error) {
-//                 console.log('Error: ', error);
-//                 return;
-//             }
-//             let jsonResponse = JSON.stringify(JSON.parse(body), null, '  ');
-//             console.log('JSON Response\n');
-//             console.log(jsonResponse);
-//         });
+        const subscriptionKey = 'd56a4c64612f411eaebddccb1038fccd';
+
+        const uriBase = 'https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect';
+
+        // const imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/3/37/Dagestani_man_and_woman.jpg';
+
+// Request parameters.
+        const params = {
+            'returnFaceId': 'true',
+            'returnFaceLandmarks': 'false',
+            'returnFaceAttributes': 'emotion'
+        };
+
+        const options = {
+            uri: uriBase,
+            qs: params,
+            body: '{"url": ' + '"' + imageUrl + '"}',
+            headers: {
+                'Content-Type': 'application/json',
+                'Ocp-Apim-Subscription-Key' : subscriptionKey
+            }
+        };
+
+        request.post(options, (error, response, body) => {
+            if (error) {
+                console.log('Error: ', error);
+                return;
+            }
+            let jsonResponse = JSON.stringify(JSON.parse(body), null, '  ');
+            console.log('JSON Response\n');
+            console.log(jsonResponse);
+        });
 
     });
 
