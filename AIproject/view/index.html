@@ -4,7 +4,26 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" type = "text/css" href="css/1.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        
+        <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+        <link rel="stylesheet" type="text/css" href="semantic/dist/components/grid.css">
+        <script src="semantic/dist/semantic.min.js"></script>
+        <script>
+                $(document).ready(function(){
+                  $("#step1").hide();
+                  $("#step2").hide();
+                  $("#step3").hide();
+                  $("#start").click(function(){
+                    $("#step1").fadeIn();
+                  });
+                  $("#btn1").click(function(){
+                    $("#step2").fadeIn();
+                    $('#btn1').hide();
+                  });
+                  $("#btn2").click(function(){
+                    $("#step3").fadeIn();
+                  });
+                });
+        </script>
     </head>
 
     <body>
@@ -24,18 +43,56 @@
                 }  
             }  
         </script>
-        <h1>Emousic</h1>
-        <p>try emousic in 3 easy steps!!</p>
-        <p>1.take a photo of yourself now!</p>
-        <p>2.upload your photo here</p>
-        <center>
+
+    <div class="ui inverted vertical masthead center aligned segment">
+        <div class="ui text container">
+            <h1 >
+                Emousic
+            </h1>
+            <h2>Music fit for your emotion</h2>
+            <div class="ui huge primary button" id="start">start <i class="right arrow icon"></i></div>
+        </div>
+    </div>
+    <div id="step1">
+    <center>
+        <div class="step">
+            <i class="camera icon"></i>
+            <div class="content">
+                <div class="description">1.take a photo for yourself</div>
+            </div>
+        </div>
+        <div class="ui medium button" id="btn1">next<i class="right arrow icon"></i></div>
+    </center>
+    </div>
+    <div id="step2">
+            <center>
+                <div class="step">
+                    <i class="upload icon"></i>
+                    <div class="content">
+                        <div class="description">2.upload your photo</div>
+                    </div>
+                </div>
                 <form action="http://127.0.0.1:8082/uploadImage" method="post" enctype="multipart/form-data">  
                     <input type="file" name="files" accept="image/*" onchange="changImg(event)" > 
                     </br> 
                     <img id="image" src="" >  
                     </br>
-                    <input type="submit" value="upload this image"/>
+                    <input type="submit" value="upload this image" id="btn2"/>
                 </form>  
-         </center>
-        <p>3.enjoy!</p>
+            </center>
+    </div>
+    <div id="step3">
+        <center>
+                <div class="ui vertical steps">
+                        <div class="completed step">
+                          <i class="credit card icon"></i>
+                          <div class="content">
+                            <div class="title">enjoy</div>
+                            <div class="description">click on music you are interested</div>
+                          </div>
+                        </div>
+                      </div>
+            </div>
+        </center>
+    </div>
     </body>

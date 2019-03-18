@@ -5,7 +5,8 @@
   "main": "index.js",
   "dependencies": {
     "express": "^4.16.4",
-    "multiparty": "^4.2.1"
+    "multiparty": "^4.2.1",
+    "semantic-ui": "^2.4.2"
   },
   "devDependencies": {},
   "scripts": {

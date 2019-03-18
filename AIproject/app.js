@@ -12,6 +12,7 @@ app.post('/uploadImage', function(req,res){
         console.log(fields);
         console.log(files);
     })
+    
 })
 app.get('/',function(req,res){
     res.sendFile(path.resolve(__dirname+"/view/index.html"));
