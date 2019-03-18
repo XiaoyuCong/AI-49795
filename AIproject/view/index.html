@@ -1,41 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" type = "text/css" href="css/1.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        
-    </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    .bg-head {
+      color: #ffffff;
+      background-color: rgba(48,125,246,1);
+      margin: 10px;
+      margin-bottom: 0px;
+    }
+    .bg-body {
+      color: #ffffff;
+      background-color: rgba(48,125,246,0.7);
+      margin: 10px;
+      margin-top: 0px;
+    }
+  </style>
+</head>
 
-    <body>
-        <script>
-            function changImg(e){ 
-                for (var i = 0; i < e.target.files.length; i++) {
-                    var file = e.target.files.item(i);
-                    if (!(/^image\/.*$/i.test(file.type))) {
-                        alert("can only upload image");
-                        continue; 
-                    }
-                    var freader = new FileReader();  
-                    freader.readAsDataURL(file);  
-                    freader.onload = function(e) {  
-                        $("#image").attr("src",e.target.result);  
-                    }  
-                }  
-            }  
-        </script>
-        <h1>Emousic</h1>
-        <p>try emousic in 3 easy steps!!</p>
-        <p>1.take a photo of yourself now!</p>
-        <p>2.upload your photo here</p>
-        <center>
-                <form action="http://127.0.0.1:8082/uploadImage" method="post" enctype="multipart/form-data">  
-                    <input type="file" name="files" accept="image/*" onchange="changImg(event)" > 
-                    </br> 
-                    <img id="image" src="" >  
-                    </br>
-                    <input type="submit" value="upload this image"/>
-                </form>  
-         </center>
-        <p>3.enjoy!</p>
-    </body>
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" style="color:#ffffff">Emousic</a>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="music name" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </nav>
+
+  <div class="container m-3">
+    <div class="row mb-3">
+      <div class="col">
+        <h4>1. Upload your photo</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col ml-3">
+        <form action="http://127.0.0.1:8082/uploadImage" method="post" enctype="multipart/form-data">
+          <label class="btn btn-outline-success">
+            Select your image
+            <input type="file" hidden name="files" accept="image/*" onchange="changImg(event)">
+          </label>
+          </br>
+          <img id="image" src="">
+          </br>
+          <label class="btn btn-outline-success">
+            Upload this image
+            <input type="submit" hidden/>
+          </label>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="container m-3">
+    <div class="row">
+      <div class="col">
+        <h4>2. Get your result</h4>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function changImg(e) {
+      for (var i = 0; i < e.target.files.length; i++) {
+        var file = e.target.files.item(i);
+        if (!(/^image\/.*$/i.test(file.type))) {
+          alert("can only upload image");
+          continue; 
+        }
+        var freader = new FileReader();  
+        freader.readAsDataURL(file);  
+        freader.onload = function(e) {
+          $("#image").attr("src",e.target.result);  
+        }
+      }
+    }
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
