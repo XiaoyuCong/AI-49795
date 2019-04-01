@@ -1,4 +1,4 @@
-song_id,Song title,Genre, valence_mean, arousal_mean
+song_id,Song title,Genre,valence_mean,arousal_mean
 2,Tonight  A Lonely Century,Blues,3.1,3
 3,DD Groove,Blues,3.5,3.3
 4,Slow Burn,Blues,5.7,5.5

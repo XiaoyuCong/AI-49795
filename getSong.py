@@ -1,8 +1,5 @@
 import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import random
-
+import sys
 
 
 #print(data.info())
@@ -24,6 +21,6 @@ def get_song(picture_valence, picture_arousal):
     print(song_title)
     return  song_title
 
-get_song(0.1, 0.5)
+get_song(float(sys.argv[1]),float(sys.argv[2]))
 
 
