@@ -1,0 +1,745 @@
+song_id,Song title,Genre,valence_mean,arousal_mean
+2,Tonight  A Lonely Century,Blues,3.1,3
+3,DD Groove,Blues,3.5,3.3
+4,Slow Burn,Blues,5.7,5.5
+5,Nothing Much,Blues,4.4,5.3
+7,Hustle,Blues,5.8,6.4
+8,Dirt Rhodes,Blues,3.2,4.8
+10,Stormy Blues,Blues,4,4.7
+12,Rebel Blues,Blues,5.5,5.8
+13,Oh Kiss No,Blues,3.2,4
+17,Fjcb Reddit Gtr Fills Mix,Blues,4.4,6
+18,Beat The Devil's Tattoo (Live @ KEXP),Blues,4.8,3.9
+19,Vultures,Blues,5.9,4.3
+20,Blues Shuffle in A One Take Improv Exercise,Blues,5.4,6.5
+21,My War Blues,Blues,6.6,6.3
+22,The Holy Feele,Blues,4,4.8
+24,Workin Boy Blues,Blues,5.3,3.9
+25,RL Got Soul,Blues,7.9,4.7
+31,All is Right,Blues,4.7,3.8
+32,Princely & Comely,Blues,4.2,3.3
+35,Apoli,Blues,4.8,6.5
+37,Afro,Blues,6.6,5.3
+39,Ramblin' Rose,Blues,7.3,5.4
+40,You And Me Baby (Holding On) (Live @ KEXP),Blues,4.6,4.8
+41,Like Nothing Else,Blues,4.3,5.1
+42,A Cinematic Influence,Blues,6.1,5.1
+43,PuritansToo ,Blues,6.7,3.5
+44,Walkabout,Blues,3.9,4.9
+45,Untitled 05,Blues,5.1,2.1
+46,Shes Too Fat,Blues,5.3,4
+47,Boulevard St Germain,Blues,4.4,4.4
+48,Our Sacred Cues,Blues,4.5,4.8
+49,Our Nights on the Turnpike,Blues,3.9,5.3
+50,Railroad's Whiskey Co,Blues,3.6,4.8
+51,Fathers Tell Yr Sons ,Blues,3.6,3.2
+52,Recognize An Hour Divine,Blues,4.6,5.1
+53,Owed to Old Poets  Our Role in the Play,Blues,4.3,5.1
+54,Broken,Blues,3.1,3.3
+55,Baby Please Don't Go ,Blues,5.8,5.4
+56,Fafa,Blues,6.4,5.8
+58,Nothing's Any Fun Any More,Blues,3.3,3.4
+59,The Truth Is What We Make of It,Blues,5.3,4.1
+60,Heat Index,Blues,4.3,6.4
+62,Baby's Got Morphine Eyes,Blues,6.2,3.9
+64,Jungle Love Revisited,Blues,3.6,4.9
+65,Bellbottoms,Blues,6.4,5.8
+67,Gadzooks,Blues,7.2,6.8
+68,Sixes & Sevens (Excerpt),Blues,3.8,4.9
+69,Keep Your Lamp Trimmed And Burning [traditional],Blues,3.2,3.9
+70,Deportee,Blues,4.4,3.6
+71,The Daily Dose Age,Blues,5.9,3.7
+72,Bona Fide,Blues,6.7,5.6
+73,Lalalala,Blues,5.8,5.6
+74,Interview,Blues,3,4.3
+76,Untitled 07,Blues,4.3,3.2
+77,Yr Blues Tripping,Blues,4.2,2.9
+78,How to go to sleep,Blues,3.4,3.9
+79,No Holiday,Blues,5.5,5.5
+80,Roulette,Blues,6,5.1
+81,The Newest Fashions,Blues,6.1,3.9
+82,Goin On,Blues,2.9,3.5
+83,If You Love Me Like You Say,Blues,6.1,5.8
+84,Swallow Me Up,Blues,5.9,5.6
+85,Out Of Our Heads,Blues,7.1,6.2
+86,Eat at Joe's,Blues,5.4,5.6
+87,Untitled 04,Blues,5.3,2.6
+88,We All Fall Down,Blues,6.7,5.5
+89,Common Experiences Man ,Blues,4.5,4.8
+90,Wood For The Trees,Blues,4.3,4.2
+91,One,Blues,4.5,5.5
+92,Further,Blues,5.8,4.7
+93,Waitin' (Live @ KEXP),Blues,7.2,6
+95,Old Strange,Blues,3.3,4.6
+96,Aces and Twos (Live @ KEXP),Blues,6.8,6.9
+98,The Index of Memory,Blues,4.3,2.7
+99,Chamber Blues' Tidal Band Presents,Blues,4.3,4.1
+101,Least the Ocean is Wet,Blues,3.4,2.8
+102,Electricity,Blues,6.5,5.4
+103,Untitled 01,Blues,5.6,3.3
+104,Ben Jonson's Blues,Blues,6.1,3.3
+105,Girl Might Do,Blues,6.5,5
+106,Wander In A Dream,Blues,4.6,3.3
+107,We Three Kings,Blues,6,4.8
+108,Giving Away The Bride (Live @ KEXP),Blues,4.5,4.2
+109,You're the Wave  Wander!,Blues,4.4,4.5
+110,(Come On and Feele) The Faith in Me,Blues,4.4,2.8
+111,Drop Down Low,Blues,5.3,5.3
+112,Big Mamou,Blues,6.8,6.4
+113,(Shuffling Towards) Art's Holy Shrine,Blues,5.4,3.8
+114,Inne (Live @ KEXP),Blues,4.8,5.7
+115,Bip Bop Bip,Blues,8.4,7.8
+116,Mistress Song,Blues,4.4,3.9
+117,Queen of Loneliness,Blues,3.9,5
+118,America,Blues,4.9,4.6
+119,Ethio Song,Blues,4.3,3.2
+120,Mr Franklin,Blues,3.8,5
+121,The not so flashy Exit,Blues,3.1,3.9
+122,The Attack of Ev'ry Time,Blues,5.5,4.6
+123,Awei Womei (Live @ KEXP),Blues,6.1,6.2
+124,The Banks of Eternity,Blues,3.7,2.8
+125,Songtress' Sweet Song,Blues,4.5,4.2
+126,Le petit jardin (with Les Gauchers Orchestra),Classical,5.1,6.1
+127,Sunset,Classical,3,5.3
+128,Veloma,Classical,3.6,4
+129,Sneeuwland,Classical,4.2,6
+130,Strides,Classical,3.3,4.2
+131,Wonderland (Instrumental),Classical,6.1,4.9
+133,Aleph,Classical,2.8,2.2
+134,Summers Coming,Classical,5.4,6
+135,O Solitude (H,Classical,3.7,3.5
+136,Fourth,Classical,6.8,6.2
+137, I,Classical,4.3,5.8
+138,Encounters With Abusive Men,Classical,3.8,2.4
+140,Shaking Off The Rust,Classical,4.2,4.5
+142, Carosello,Classical,4.6,4.8
+143,Aux puces nº5,Classical,4,4.9
+144,The Passing of Time,Classical,3.4,4.7
+145,The Forest and the Trees,Classical,3.1,5.4
+146,Nine,Classical,2.4,3.5
+148,Bending Light Infinity version,Classical,4.7,5
+149,Gagool,Classical,3.4,3.1
+150,Bow to Your Neighbor (Excerpt),Classical,5,5.4
+151,Pacifico,Classical,4,4.5
+152,The Tea Party,Classical,4.4,5.6
+153,Blizzard,Classical,3.9,4.5
+154,Ouverture,Classical,4.2,4.1
+155,Cyprus,Classical,3.6,5.4
+156,Wheel of fortune (with Les Gauchers Orchestra),Classical,6.4,6.7
+157,Opening Doors,Classical,4,6.2
+158,5 00 AM,Classical,2.1,3.6
+159,Awaken From A Nightmare,Classical,3.8,3.1
+160, Suite for Violin 9 Hora vivace,Classical,3.5,3.5
+161,O Fortuna,Classical,6.3,3.5
+162,Le bal de Rémy,Classical,3.7,4.6
+163,Caught In A Realm,Classical,3.6,4.5
+164,Row Night,Classical,4.1,2.9
+166,Stop It (Instrumental),Classical,3.1,4.2
+167, Les chaises Louis XVI,Classical,2.7,3.3
+168,Funeral March for Brass,Classical,3.3,3.4
+169,Black Coffee,Classical,2.4,2.8
+170, La Flor de Olmedo,Classical,3,5
+171,That Kid in Fourth Grade Who Really Liked the Denver Broncos,Classical,2.1,3.6
+172,The Temperature of the Air on the Bow of the Kaleetan,Classical,3.8,5
+173,Ease,Classical,4.6,2.2
+174,War And Peace,Classical,4,3.8
+175,Don't You Want to Go to Heaven Uncle Sam  ,Classical,3.7,4.3
+176,Six,Classical,2.4,3.9
+177,O Come O Come Emmanuel,Classical,4.8,5.6
+178,Uno Is Walking,Classical,2.8,3.7
+179,The Time To Run,Classical,5.2,6
+180,Bridging and Mending,Classical,4.8,5.9
+181,A Muddy Heart,Classical,3.7,2.5
+182,Dedicated to Elizabeth Cotten (with Matt Bauder),Classical,2.2,3.7
+184,imagined version),Classical,3.6,3.4
+185,Ghost Dance,Classical,4.9,4.6
+186,Nights Tale,Classical,3.7,4
+187,Other Child Room,Classical,2.5,3.7
+188,Tom's Lullaby (with Les Gauchers Orchestra),Classical,4,3.3
+189,Wild Rover with Bellevue Chamber Chorus,Classical,6.5,7.1
+190,Virtutes Instrumenti,Classical,2.8,3.1
+191,Variatio 14 a 2 Clav,Classical,5.1,6.3
+192,Lucky,Classical,5.8,6.1
+193,Hands,Classical,4.1,3
+194,Reminiscence,Classical,2.7,4.7
+195,Golden Alley Reprise,Classical,4.2,2.7
+196,Borodin Butterfly,Classical,4.3,4.5
+197,Eight,Classical,2.2,2.8
+198,Red Danube,Classical,1.9,3.3
+199,Spring Mvt 1 Allegro,Classical,5.3,5.7
+201,Les crocodiles mangent aussi les bonshommes Wizzards,Classical,3.7,4.8
+202,God Rest Ye Merry Gentlemen,Classical,4.6,5.2
+203,WATCHING IT SNOW WHILE THINKING OF YOU,Classical,3.5,4.8
+204,Sinfonia di Violoncello e AM RadioFinitura,Classical,3.6,2.2
+205,Prelude No,Classical,3,4.5
+206,Unisons,Classical,2.3,2.6
+207,Notebook Reading,Classical,4.8,4.8
+208,Leave Well Enough Alone (Instrumental),Classical,4.8,6.5
+209,Amazing Grace 2011,Classical,3.1,4.6
+210, Suite for Violin 8 Ardeleneascamoderato ,Classical,4.2,5.5
+211,After Christmas,Classical,3.1,4.9
+212,My Song For January,Classical,4.6,5.4
+213,Graveyard Illusions,Classical,2.6,2.5
+214,Blue sox,Classical,3.6,4.1
+215,In A Party Watching A Party,Classical,3.2,2.6
+216,On Things Invisible to the Eye (Act II),Classical,4.5,5.3
+217,Haunted,Classical,3.5,4.8
+218,the piano of the old seaman,Classical,2.9,4
+219,The Book of Floating,Classical,2.4,3.8
+220,Jazz Band With Jazz Hands,Classical,4.1,3.4
+221,First,Classical,4.3,3.4
+222,ha'zman,Classical,3.8,4.3
+223,One,Classical,2.2,3.5
+224,jingles interludes et dimanche minuit,Classical,5.5,5.7
+225,The Anticipation Of Spring,Classical,3.7,4.2
+226,A TOUGH DECISION,Classical,4.9,5
+227,SELF REFLECT,Classical,3.1,3.5
+228,Woody Allen,Classical,3.5,4
+229,Slow Motion Strut Version Two,Classical,4.8,4.8
+231,Train,Classical,4.1,5.6
+232, Serenade for Strings Op22 in E Major larghetto,Classical,2.5,2.7
+233,HURRY UP AND RAIN,Classical,4.7,4.5
+234,Dedicated to Leroy Jenkins,Classical,3.5,3.9
+235,Flight of the Moth,Classical,3,3.7
+236,Transmutation Of Metals,Classical,2.5,2.4
+237,Birth,Classical,4.2,3.9
+238, BWV 846,Classical,3,4.6
+239,Seven,Classical,2.3,3.3
+240,Gammelvals,Classical,6.4,6.6
+241,After The Week I've Had,Classical,4.1,4.6
+242,Silent Night,Classical,3.5,4.7
+243,Ave formosissima — O Fortuna (reprise),Classical,7.2,4.1
+244,Valediction,Classical,4.3,4.2
+245, Entrance to the Queen of Sheba for Two Oboes Strings and Continuo allegro ,Classical,4.2,6.1
+246,Traumatic Childhood,Classical,4.9,3.2
+247,Micro Composition 10,Classical,3.9,4.5
+248,Chasing Time,Classical,3.4,3.7
+250,Winter Mvt 3 Allegro,Classical,3.4,3.6
+253,Dance!,Country,6.6,2.5
+254,Original Rags (1900 piano roll) ,Country,5.3,7.4
+257,Wine Wine Wine,Country,7.6,6.9
+258,ChainSmoke Days,Country,4.3,4.3
+260,Detroit,Country,5.3,3.6
+262,The Entertainer (1902 piano roll) ,Country,5.6,6.9
+264,House Rent Jump,Country,5.3,5.5
+265,Emmet's Cuckoo Song,Country,4.5,6.4
+266,SOLO ACOUSTIC GUITAR,Country,3.6,4.8
+269,Swan Song,Country,4.3,4.8
+270,I Do Like To Be Beside The Seaside (1907 piano roll) ,Country,6.1,7.1
+272,JENNY'S THEME,Country,5.9,6.4
+273,Western Country,Country,5.4,7.2
+274,Mochi,Country,7.7,6
+275,Rednecks with White Faces,Country,5.3,5.5
+276,Blackberry Hedge,Country,6.1,5.3
+278,ACOUSTIC BLUES,Country,5.5,5.1
+279,Party,Country,3.6,4.7
+280,Upper Room,Country,4.2,3.3
+281,The Smiler (1907Zonophone Concert Band) ,Country,5.4,7
+282,Have You Seen It ,Country,3.2,4.2
+284,Last Dance,Country,4.4,5.2
+285,Death Valley Waltz,Country,3.5,5.1
+286,,Country,5.7,6.9
+288,WORDS,Country,3.5,5.2
+289,Pine Apple Rag (1908 piano roll) ,Country,5.7,6.7
+290,The City,Country,2.1,3.9
+292,Horror Show,Country,7.3,7.4
+293,Ayahuasca,Country,6.3,4.2
+294,Chinese Blues (1916 George Gershwin piano roll) ,Country,5.5,6.5
+296,Candy,Country,5.9,5.7
+297,My Friend,Country,3.1,3.6
+298,Obvious,Country,4,5.4
+299,RUNNING WATERS,Country,2.8,4.3
+300,What I Found,Country,6.8,4.5
+301,Never Turnin' Back (Live @ KEXP),Country,3.2,3.7
+302,Danger Behind The Wheel (Live @ KEXP),Country,6.6,7
+303,American English,Country,7,6.4
+304,Rose Room,Country,3.8,4.6
+305,Riding Down To Mexico,Country,6.4,6.8
+306,Frog Legs Rag (1906 piano roll),Country,5.7,6.7
+307,Turkey in the Straw,Country,6.1,6.8
+308,WHEELS,Country,4.3,6.6
+309,Theme for  The Mad Thinker ,Country,5.3,5.8
+310,Neighborhood Funeral Dress,Country,2.1,2.7
+311,Ghostwriter,Country,5.8,6.9
+312,Wild Guide,Country,4.6,5.8
+313,TRAVEL LIGHT,Country,3.6,5.3
+314,Ox Driving Song,Country,5.8,5.9
+315,Scotland the Brave,Country,6.4,7.5
+316,The River,Country,2.8,3.5
+317,Rose Water,Country,6.1,4.3
+318,Emergency Exit,Country,5.9,5.9
+319,Frog In The Well,Country,4.5,6.6
+320,99 Chicks,Country,7.4,6.6
+321,Necrófago,Country,7.3,6
+322,I Wanna Say Hello,Country,6.1,7.6
+323,Pilgim Song (Live @ KEXP),Country,4.82,5.73
+324,SERENITY,Country,3.3,4.7
+325,Birmingham Jail,Country,5.5,5.4
+326,THINGAMAJIG,Country,5.4,7.2
+327,Ricky Dee,Country,6,7.1
+328,Imna 'Merican,Country,5.2,4.2
+329,Cars and Parties,Country,3.3,4.2
+330,Loco Two,Country,5.9,3.1
+332,FUNKY JUNKY,Country,5.5,6.9
+333,Live at the Winston,Country,6.7,6.1
+334,Childhood Days,Country,5.9,5.9
+335,Help You (Live @ KEXP),Country,6.8,6.8
+336,Rock n Roll McDonald's,Country,6.1,6.6
+338,Southern Gothic,Country,3,3.8
+339,ROCKY TOP,Country,5.9,6.9
+340,30 Days in the Workhouse,Country,3.8,4.6
+341,Columbine,Country,3.8,4.4
+342,ACOUSTIC MEDITATION,Country,4,5.1
+343,Clear Blue Sky,Country,7,8.1
+344,ONE FINE DAY,Country,4.6,5.2
+345,You Shake Me,Country,7.2,6.5
+346,TENNESEE HAYRIDE,Country,6.7,7.3
+347,Goodbye Old Paint,Country,3.82,5.82
+348,I Wish I Was A Headlight,Country,5,5.7
+349,There Were Some Famous Artists,Country,4.6,5.8
+350,BACK TO THE WOODS,Country,6,6.5
+352,Talk About Suffering,Country,5.5,4.5
+353,Birmingham Jail,Country,4,4.8
+354, If Not For Your Sweet Heart ,Country,7.1,6.4
+355,Check Girl,Country,5.1,6.5
+356,SNAPPY,Country,4.6,5.6
+357,Red Clay Road,Country,4.8,6.5
+358,Love Song To Little Trees,Country,5.6,4.2
+359,Bed,Country,2.5,3.7
+360,NICE AND EASY,Country,2.5,5.5
+361,AUTUMN SUNSET,Country,2.55,3.36
+362,RIVER MEDITATION,Country,4,5.9
+364,MOUNTAIN SUN,Country,5.5,6.5
+365,Waterbound,Country,6,7.1
+366,Dirty Fingernails,Country,6.9,6.1
+367,After Today,Country,3.1,2.7
+368,Better Do It Now,Country,4.8,6.1
+369,Mr,Country,2.9,3.4
+370,Little Wooden Church,Country,3.8,3.4
+371,Will,Country,5.2,6.6
+372,Runaway Puppy,Country,3.6,4.8
+374,Gambler's Blues,Country,7,4.9
+375,Bit a Bullet,Country,1.9,2.8
+376,Night Owl,Electronic,5,5.9
+378,Deep Sky Blue,Electronic,5.5,5.9
+379,Chantiers Navals 412,Electronic,1.9,2.9
+380,Five Minutes at the Rainforest Cafe,Electronic,5.6,4.8
+381, DnB Mix (Germany),Electronic,6,6.7
+383,Neuroleptic trio instrumental 5,Electronic,4.2,3.6
+384,Whirlwind Dance,Electronic,3.6,4.1
+386,As Colorful As Ever,Electronic,5,5.5
+387,Memories Of Thailand (Beat Doctor's 'stuck in Britain' remix),Electronic,6.2,6.2
+390,Midori,Electronic,5.7,6.2
+391,Another Position (original mix),Electronic,5.5,6.1
+392,Ode To A Baby Snowstorm,Electronic,3.4,4.8
+393,Lysine,Electronic,6,6.4
+395,Spectrum (Subdiffusion Mix),Electronic,6.7,6.2
+397,Mercy,Electronic,7,7
+399,Waking Up (Instrumental),Electronic,6.7,7
+400,Run The Tape,Electronic,5.1,5.6
+401,Something Elated,Electronic,5.5,6.4
+402,Quittin' Time,Electronic,7.1,7.1
+403,Flying pea v,Electronic,5.1,5.2
+404,Calm The Fuck Down,Electronic,6.9,6.8
+405,Presenterator,Electronic,6.1,7.4
+406,My God Those Legs,Electronic,5.3,4.3
+407, april deegee rmx,Electronic,4.3,4.5
+408,snow world under the white moon,Electronic,6.6,6.1
+410,Twinkling,Electronic,3.8,5.1
+415,Dubsteady,Electronic,6,5.2
+416,Please Mind the Dubstep,Electronic,5.5,5.2
+419,over and under,Electronic,3.3,4
+420,90,Electronic,4.5,5.4
+422,Moonlight and Roses,Electronic,2.8,3.7
+423,My Pretty Looking Clothes,Electronic,5.2,4.5
+425,Stars,Electronic,7.1,6.8
+426,Whispering Through,Electronic,5.3,5.3
+427,Enthusiast,Electronic,5.2,5.8
+428,How Exciting,Electronic,6.6,6.6
+429,Divider,Electronic,3.3,4.3
+430,Black Gloves,Electronic,4,2.9
+431,Dub steps,Electronic,6.1,5.5
+432,Barbarian,Electronic,5.3,5.3
+435,Warm Up Suit,Electronic,4.5,5.9
+436,raw instrumental pt,Electronic,4.3,5.2
+437,Night Beach,Electronic,5.2,4.3
+440,Oh Wee,Electronic,5.3,6.3
+441,Singing Forest,Electronic,4.6,5.1
+442, Arrogalla remix feat Andrea Congia],Electronic,4.1,4.5
+444,People Living And Leaving Big Citys,Electronic,2.3,2.5
+445,Casual Graphic Designer,Electronic,2.4,4.6
+448,Destination,Electronic,6.7,6.5
+449,simple,Electronic,3.6,3.8
+450,Grief And Sleep,Electronic,4.1,5
+451,Smoothest Runes,Electronic,4.9,4.4
+452,La (instrumental),Electronic,5.45,6.75
+453,Only Instrumental,Electronic,4.6,5.6
+454,Steppin,Electronic,5,4.8
+455,Expedition Chant Cup,Electronic,5.4,5.7
+456,Crack in Time,Electronic,6.1,2.3
+458,Night Fly,Electronic,3.4,5
+459,Cryin in the Delta Wind,Electronic,6.3,6.1
+460,Inner Demon,Electronic,3.8,3.8
+461,Ocean Breeze,Electronic,4.8,4.4
+462,Ironic (feat,Electronic,5.8,4.6
+463,Overlay Star,Electronic,5,5.7
+464,Ropes,Electronic,5.1,5.6
+466,Forever falling up,Electronic,6.6,5.9
+467,Runtime error,Electronic,5.7,6.8
+468,Hiss,Electronic,3.6,3.4
+469,Knock Knock,Electronic,5.1,5.3
+472,I,Electronic,6.5,5.2
+473,SmurfPulser,Electronic,7.1,5.5
+475,Ooo,Electronic,5.6,5
+477,Night Drive,Electronic,7.1,7.2
+478,Initiation,Electronic,2.8,3.2
+479,Not Found (Invisible),Electronic,4.5,5.7
+480,entry,Electronic,2.7,4.1
+481,Seeing The Future,Electronic,3.4,4.7
+482,LA,Electronic,1.9,3.5
+484,Got Me (club mix),Electronic,6.4,6.5
+485,Coral Reef,Electronic,2.6,3.7
+486,Neurociencia,Electronic,6.2,5.7
+487,D2,Electronic,4.5,5.3
+488,Cold Summer Landscape,Electronic,1.6,3.4
+489,Pink Fuzz!,Electronic,4.6,5.2
+490,Chico (The Way Out),Electronic,3.9,3.7
+492,Beryllos,Electronic,4.4,4.8
+493,summer,Electronic,3.7,4.9
+494,Garden Theme,Electronic,3.7,4.1
+496,OutroDub,Electronic,4.7,5.9
+497,The Beat Goes On,Electronic,6.2,5.7
+498,Drown,Electronic,2.9,2.8
+499,Bayview,Electronic,3.6,3.6
+500,القذافي الأمازون الحرس,Electronic,6,5.2
+501,Behind The Seas,Folk,2.5,4.4
+502,Capulet,Folk,4.8,4.6
+503,Big Gay Water Fight,Folk,5.8,6.4
+504,Rebetikaud,Folk,4.8,4
+506,Like Home,Folk,2.9,4.1
+507,Mε Πιάνουνε Ζαλάδες,Folk,4.9,4.8
+512,Rast'e Tou Teke,Folk,5.1,5.4
+513,Dream (instrumental),Folk,3.1,4.2
+514,SIDEWALK,Folk,4.3,5.8
+515,Hash Smugglers Blues,Folk,3.8,3.4
+518,Burning School,Folk,4.1,3.4
+519,MDMA (Pt,Folk,6.8,5.3
+520,Broken Spell,Folk,4,5.5
+521,Old Strange,Folk,3.8,4.6
+522,New Rembetika   14,Folk,3.5,2.7
+523,Love,Folk,5.1,5.9
+524,Black Eyes,Folk,3.3,4
+525,(h) Banjo Arba Minch Garden,Folk,4.3,4.8
+527,A Stranger's Map of Texas,Folk,4,5.7
+529,TV Dinner,Folk,4.7,5.8
+530,The Tropical Lounge Prayer Directory,Folk,3.3,3.5
+535,Sally in the Garden Sifting Sand,Folk,6.1,6.5
+536,Don't You Want to Go to HeavenUncle Sam  ,Folk,5.1,4.5
+537,Efoumernam Ena Vradi,Folk,5,2.6
+540,Trouba,Folk,4.1,4.4
+544,Day Into Night,Folk,4.8,4.5
+547,It's all right,Folk,3.4,4.8
+550,Titanic,Folk,4.2,5.9
+551,Harmless Blues,Folk,3.2,4
+554,Wave Graves,Folk,2.8,5
+555,Views of The Holy & Divine,Folk,5.2,4.8
+556,Life on the Odyssean Wave,Folk,5.6,6.1
+558,Good Night Heart,Folk,2.8,3.2
+560,Vanlig,Folk,2.9,4.6
+561,La Minor Live at Pacific Parc Vol,Folk,6.9,7
+564,Solemn Ground,Folk,4.7,4.9
+565,Sousta Politiki,Folk,3.1,3
+568,The Incredible Infection of Unintended Invection,Folk,5.4,3.1
+574,Cattails,Folk,4.5,4.8
+577,Look inside,Folk,5.6,5.5
+579,The Surveyor,Folk,3.1,3.2
+580,Grass Above My Head,Folk,2.4,4.4
+581,Mona Lisa,Folk,5.3,6
+582,12 MORNINGS,Folk,3.1,4.9
+584,Stin Ypoga,Folk,2.5,2.4
+585,The Bright New Year (By Bert Jansch),Folk,4,4.2
+586,Hemoglobin (Live at the Tonic Room),Folk,5.2,5.9
+591,Whoopee Ti Yi Yo,Folk,5.7,6.2
+592,Tape Eater,Folk,5.45,5.09
+594,Di Hei Hei (sung by Po Sun Yi),Folk,4.2,3.1
+597,Wafternoon,Folk,4.8,6.4
+598,Joke,Folk,4,5.6
+600,32 Ford,Folk,3.5,4
+605,Flirt,Folk,4.4,6
+606,Ice Cream,Folk,4.1,5.6
+607,Past Has Not Passed,Folk,4.4,6.1
+608,Adinatisa O Kaymenos,Folk,2.9,3.8
+609,Eter,Folk,5.3,5.55
+610,Shine,Folk,6.3,6.5
+611,Car Crash,Folk,5.1,4.8
+612,Wild Horse of Stony Point,Folk,5.6,6.6
+613,Going to,Folk,5.2,6.8
+614,I Want To Destroy Something Beautiful,Folk,4.3,3.7
+615,Talking,Folk,3.2,5
+616,Hot Kettle and a Lonely Gun,Folk,3.5,5
+617,A Clean Slate,Folk,6.5,3
+620,Aqua,Folk,5.8,4.4
+621,The Blender is Not Built For That,Folk,2.9,4.4
+622,Zoo,Folk,4.5,5
+623,Anniversary,Folk,3.8,5.9
+625,Night Ahead,Folk,3.1,4.4
+628,Hungaria,Jazz,4.9,6.8
+629,Volksing Ferretismico,Jazz,7.4,7.6
+631,Lansdowne,Jazz,7.6,3.1
+632,Forward,Jazz,4.2,5.4
+634,If I Can't Dance It's Not My Revolution,Jazz,4.7,5.8
+635,The Third Man Theme (Live @ KEXP),Jazz,6.6,7.6
+637,It smells like Chamomile Tea,Jazz,2.2,3.6
+638,Winter Sunshine,Jazz,3.2,4.4
+639,Indian Summer,Jazz,6.1,6.3
+640,¡Qué Paciencia!,Jazz,7.6,7.8
+643,Thriller Iller,Jazz,3.5,4.2
+644,By the Coast (2004),Jazz,4.3,5.6
+645,Mutatis Mutandis,Jazz,4.6,5.7
+646,Backed Vibes Clean,Jazz,3.1,3.8
+647,Scattered Knowledge,Jazz,3,5.8
+648,Swing 39,Jazz,5.1,6.8
+649,I Remember You,Jazz,6.2,6.7
+650,City Tail,Jazz,6,4.2
+651,Balancing Act,Jazz,6.4,7.1
+652,Don't Rush,Jazz,3.2,4.3
+653,Jazz Club,Jazz,5.3,6.5
+654,asrealasitgets2),Jazz,5.1,4.4
+656,when,Jazz,2.6,4.1
+657,Ponky Fonky Ferret,Jazz,5.1,5.6
+658,AcidJazz,Jazz,4.4,5.7
+660,05 CherryBlossom,Jazz,2.1,2.8
+661,Are,Jazz,2.2,2.8
+662,Rythme Gitan,Jazz,5.9,5.1
+663,Rail Star Mode,Jazz,3.3,4.3
+664,Cable Swingin' Ferret,Jazz,7,6.6
+665,Sweet Georgia Brown,Jazz,5.7,6.2
+666,Crackle & Pop,Jazz,5.3,5
+667,I Can't Behave,Jazz,4.2,4.9
+668,LordDa Mercy,Jazz,5,5.3
+671,Menilmontant,Jazz,3.1,3.7
+672,Vibe Ace,Jazz,4.4,6.3
+673,Mirando Hacia Atrás,Jazz,6.6,6.7
+674,Songe D'Automne,Jazz,6.8,7.4
+675,Meetin' & Movin',Jazz,5.1,5.8
+676,Chosen Kale Mazel Tov,Jazz,6.6,6.6
+677,Neuroleptic trio instrumental 6,Jazz,6.5,5.3
+681,Devil with the Devil,Jazz,4.9,6.6
+682,Resonance,Jazz,4.8,6
+684,magic of fog,Jazz,4.3,4.9
+685,George,Jazz,4.5,3.6
+686,is there anybody out there,Jazz,3.4,5.5
+687,Balancing Act Chosen Kale Mazel Tov ,Jazz,7.3,7.4
+688,Irresistible Yvette (with Les Gauchers Quintet),Jazz,4.3,5
+689,M (2003),Jazz,3.8,4.6
+690,Infant Holy Infant Lowly ,Jazz,2.4,4.4
+691,Hard Time Killing Floor Blues,Jazz,5,3.7
+692,Boudougou,Jazz,6.9,6.1
+693,Impressive,Jazz,6.2,5.3
+695,Track 6,Jazz,5.9,6.2
+696,Extraordinary Vibe,Jazz,5.3,5.8
+697,VA Riding (Single Edit),Jazz,4.8,5.8
+698,The Keeper (Live @ KEXP),Jazz,3.9,3.7
+699,SYMPHONIC SLIDE,Jazz,3.7,4.5
+700,Moon Dream (Extended Mix),Jazz,4.8,5.6
+702,Shipyard,Jazz,7.5,3.3
+703,Arana,Jazz,5.1,6
+704,Monkeys have arrived,Jazz,4.1,4.2
+706,Amari Szi,Jazz,5.5,6
+707,Prelude #2 in A Minor (Chopin),Jazz,3.2,3.1
+708,NO MATH 7,Jazz,3.2,3.2
+709,Jovanko,Jazz,5.8,5
+710,They Enter Through the Ear,Jazz,5.4,5.1
+711,Dances and Dames,Jazz,2.9,3.1
+712,As I Figure,Jazz,3.4,5.3
+713,parte 1 parte 4 ,Jazz,4.9,6.3
+714,In The Techno Tent,Jazz,4.4,4.8
+715,PULLING MYSELF UP THROUGH,Jazz,2.9,4.3
+717,Underscore Underwear,Jazz,4.5,4.9
+718,Cocek,Jazz,5.9,6.5
+719,Transparente,Jazz,7.1,7.2
+721,Mic Check,Jazz,5.7,5.5
+722,Orbiting A Distant Planet,Jazz,5.7,7
+723,April Showers,Jazz,6.5,7.2
+724,RSJFoundation live at Pacific Parc,Jazz,6,6.1
+725,Octopus,Jazz,5.1,5.1
+726,Trio Take 5,Jazz,7,3.6
+727,THE HAPPIEST LIFE,Jazz,4.3,4.5
+728,Magdalena,Jazz,6.9,7.5
+729,Pepper Spray Blues,Jazz,6.4,3.5
+730,Mircoobee,Jazz,3.7,4.5
+731,Džejbe Džejbe,Jazz,7.3,5.8
+732,Dobur Vecher,Jazz,5.6,6.3
+733,Mad About You,Jazz,4.3,5
+734,Sandu,Jazz,5.7,6.3
+735,Invisible Walls,Jazz,4.3,4.9
+736, Sax,Jazz,2.7,3.7
+737,Some Other Place,Jazz,4.1,4.9
+738,Blue Draggish,Jazz,5.5,6.2
+739,Balcarabic Chicken,Jazz,6.2,6.9
+740,Futoristico,Jazz,3.7,4
+741,Broken String,Jazz,4.6,4.4
+742, Nitro,Jazz,6.1,6.5
+743,Tasky,Jazz,3.1,5
+744,Capadócia,Jazz,6.1,5.5
+745,Maia,Jazz,4.2,1.6
+746,My Blackbirds Are Bluebirds Now,Jazz,3.7,4.6
+747,bruch,Jazz,3.6,4.9
+748,Night City,Jazz,5.1,4.4
+749,Big Fun (New Ruckus),Jazz,4.2,4.9
+750,Street Song  Honga,Jazz,5.3,5.7
+756,Lips,Pop,5.9,6.8
+757,Freeway,Pop,6,6.1
+758,Ou Inme,Pop,4.8,5.9
+759,Frozen Egg,Pop,6.7,5.9
+763,Siesta,Pop,3.5,5.5
+764,Vogelbird,Pop,6.3,7.5
+767,kirblooey,Pop,5.2,6.5
+769,Chaos,Pop,6.2,5
+773,The Island Song,Pop,4.5,4.7
+775,In The Early Months Of The Emergency,Pop,3.7,4.4
+776,Through The Haze Of The Green Glasses,Pop,3.5,4.5
+777,A Little Too Fast,Pop,6.2,5.1
+779,What Circle Where,Pop,2.8,5.3
+780,Gay_Bar_videogame,Pop,5.8,6.2
+781,Butterfly,Pop,4.9,6.3
+782,Who Are You,Pop,7.2,4.7
+784,Le Gateau Au Yaourt,Pop,4.7,5.7
+787, Ride The Tide,Pop,6.1,6.3
+789,No Slow Dancing,Pop,3.9,5.2
+790,City Sounds,Pop,7.2,5.4
+791,West Bank,Pop,2.7,4.6
+794,Window #3,Pop,2.5,4.2
+795,Simon Cowell,Pop,2.2,3.5
+796,Ghost Transference,Pop,5.2,5.1
+797,Sunday Lovers,Pop,4.9,5.4
+798,Waha,Pop,6.5,5.9
+799,Beach Point Pleasant,Pop,4.1,5.6
+800,Cinq,Pop,4.5,4.5
+801,Marty Feldman,Pop,3.3,3.5
+804,Birthday Cake,Pop,6.9,6.8
+805,Son Of A Systems Engineer Manager,Pop,2.2,3.5
+806, Christmas Day With Me,Pop,6.4,6.6
+807,Ftgrr,Pop,4.8,6.5
+808,Lost,Pop,3.1,4.3
+810,El barzón,Pop,6.5,6.6
+811,Tourist Shooting Tar Balls,Pop,4.1,4.9
+813,Wild & You,Pop,6.2,6.7
+814,re bitterfly,Pop,6.1,5.3
+815,LightLivid ,Pop,5.5,5.9
+818,In Fielder,Pop,5.9,6.8
+819,Tilly's Punctured Romancer,Pop,4,5.7
+820,Wallflower,Pop,6.4,6.4
+823,You Want It,Pop,4.8,4.8
+824,Untold Story,Pop,7.2,7
+825,I Keep My Soul Alive with Different Kinds of Germs,Pop,4.1,5.7
+826,I'll Keep It With Mine,Pop,4,4.7
+829,Talk to me,Pop,2.3,4.5
+830,Enel,Pop,5.3,5.9
+831,Electrohood,Pop,5.2,6.2
+833,Rocky 5000,Pop,5,5.8
+834,Fly By Night,Pop,4.7,4.3
+836,Memories Are Made of This,Pop,7.1,5.7
+839,Fun With Petroleum,Pop,5.7,4.4
+841,Nicotine Blues,Pop,4.2,4.7
+844,Wizball,Pop,3.8,3.4
+845,The Great Giana Sisters (Piano cover),Pop,5.1,4
+846,High Buildings,Pop,6,5.5
+848,Eating Baby Lions Nightmare,Pop,2.2,2.7
+850,Strange Things,Pop,3.6,3.1
+851, Etam Etamski,Pop,5,4.4
+852,Erebus (piano),Pop,4.5,4.7
+854,Through & Through,Pop,2.9,3.8
+855,2,Pop,2.9,4.5
+856,The Other Man,Pop,6.7,5.6
+857,Trick Pony (Live @ KEXP),Pop,4.9,5.3
+858,Alive,Pop,4.4,4.5
+859,Delta,Pop,3.6,5.1
+860,Señor Bomba,Pop,6.6,6.7
+863,The End of Time,Pop,6.4,7
+864,Polaroid,Pop,5.7,5.9
+865,Love Me Like You,Pop,2.8,4.6
+866,Basket Ball Get Your Groove Back (Live @ KEXP),Pop,5.8,5.1
+867,Saudades,Pop,5.8,6.5
+869,cuts&bruises,Pop,2.6,4.1
+871,Deep Thought Process,Pop,6.4,6
+872,Ticking Away,Pop,3.4,5.5
+873,Summer Song (Instrumental),Pop,6.8,7
+874,This Love's Got to Change,Pop,6.3,4.4
+876,Kopeika,Rock,6.3,6.7
+879,Computer,Rock,5.6,6
+880,Stance Gives You Balance,Rock,4.9,3.8
+882,The last ones,Rock,5.3,5.2
+884,Old White Eye,Rock,5.5,5
+886,Mariachi Bandits of Gatling Gun Ridge,Rock,5.9,5.4
+887,Happening for Lulu,Rock,5.1,5.6
+889,Requiem for a Fish,Rock,6.9,7.2
+890,The Beach! The Beach!,Rock,3.6,4.7
+891,Jupiter The Blue,Rock,3.4,5.5
+892,North Sea Radio,Rock,3.9,2.9
+893,Blackroad,Rock,7.3,3.3
+897,arriba,Rock,4.9,4.3
+898,No,Rock,6.4,5.5
+899,One Man And His Piano,Rock,5.3,6.3
+902,Naramiddu poita (feat,Rock,7,3.3
+903,Wild Eyes (live @ WFMU),Rock,5.9,5.6
+904,Something In the Woods,Rock,5.7,4.2
+908,You Can't Have It   Shinjuku Birdwalk,Rock,5.5,4.9
+909,Exotica,Rock,6,5.5
+910,Utopia (instrumental),Rock,7,6.6
+911,Jungle Law,Rock,7.1,4
+913,Untitled 06,Rock,4.8,3.3
+915,Everything Is Changing,Rock,5,5.2
+921,Sambarama,Rock,5.9,6.1
+924,Strange Italian Song,Rock,5.4,6.2
+925,Photosphere,Rock,4.9,5.7
+926,Flying Alaska V,Rock,4,5.5
+928,,Rock,5,4
+931,Mickey Maos,Rock,6.3,6.5
+932,Crowning Of A Heart (Live @ KEXP),Rock,4.5,4.9
+934,Other Side,Rock,6.2,6.4
+936,Plumy Tale,Rock,5.4,4.7
+938,Thrashing In The Unknown,Rock,7.3,4.2
+939,You should go on,Rock,6.2,2.7
+941,Get My Fix (Morphamish Mix),Rock,7.2,5.9
+942,Santa Leone,Rock,4.8,4.1
+944,Hey Grrl,Rock,7.1,6.5
+945,Leelo (Part 1),Rock,2.3,2.8
+949,Favorite Secrets,Rock,5.7,6.1
+952,Monday at 12,Rock,4.2,3.7
+954,Bruce Lee (acoustic Jam),Rock,5.1,5.5
+955,Blind Eyes,Rock,3.8,5.6
+956,Indian Summer,Rock,4.5,5.4
+957,boss A,Rock,2.8,4.7
+958,(Untitled 1),Rock,5.5,5.1
+959,Indyair,Rock,6.2,6.4
+960,Helix Nebula,Rock,7.7,7.7
+961,Union Square,Rock,5.6,5.5
+962,Rotting Heights,Rock,7.4,3.4
+964,Driftin' Around,Rock,7.6,7
+967,I Had A Dream,Rock,2.8,4.4
+968,Bar Trombone,Rock,3.8,3.2
+970,The Pharaos' Theme,Rock,6.6,6.6
+973,Swagg's & Elliot,Rock,6.5,4.6
+974,Crucial Contact,Rock,4.1,4.2
+976,Merry Christmas,Rock,6.2,5.9
+977,Suck City,Rock,7.3,3.5
+978,Absolutely Gorgeous,Rock,7.7,6.1
+979,Deck the Halls,Rock,3.1,5.5
+980,Tell The Police The Truth,Rock,5.8,4.3
+981,Bottums Up,Rock,6.7,6.6
+983,Tripped & Fell In Love (instrumental),Rock,4.8,6.3
+985,Zebra (Live @ KEXP),Rock,3.9,6.1
+986,Girl,Rock,5.8,4.5
+987,Hit and Run,Rock,6.3,3.6
+988,The Pull,Rock,5.4,5.9
+989,piste quatre,Rock,6.3,6.4
+990,El Tranvía,Rock,6,6.1
+991,Moving Away,Rock,3.1,3.5
+993,Stance Gives You Power,Rock,4.4,3.8
+994,Engine #3 (Morphamish Remix),Rock,6.6,5.3
+995,Honte De Toi,Rock,4.7,2.4
+996,Fireworks,Rock,6,6.7
+997,Monster On Campus,Rock,6.4,6.7
+999,So Easy,Rock,4.1,5.9
+1000, Single,Rock,6.8,5.6
