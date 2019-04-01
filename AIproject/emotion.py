@@ -20,11 +20,11 @@ def calculateVA(anger,contempt,disgust,fear,happiness,neutral,sadness,surprise):
     d = {'anger': [anger],'contempt': [contempt],'disgust': [disgust],'fear': [fear],
          'happiness': [happiness], 'neutral': [neutral], 'sadness': [sadness], 'surprise': [surprise]}
     df2 = pd.DataFrame(data=d)
-    pred = clf.predict(df2)
+    pred = rf.predict(df2)
     print(pred)
     return pred
 
-data = pd.read_csv("/Users/yuxin/Desktop/49795/AI-49795/result.csv")
+data = pd.read_csv("result.csv")
 data.head()
 
 
