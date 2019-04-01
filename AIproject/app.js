@@ -5,16 +5,12 @@ const multiparty = require('multiparty');
 const path = require('path');
 const bodyParser = require('body-parser');
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
+var exec = require('child_process').exec;
 
 const request = require('request');
 
-var jsdom = require("jsdom");
-const { JSDOM } = jsdom;
-const { window } = new JSDOM();
-const { document } = (new JSDOM('')).window;
-global.document = document;
 
-var $ = jQuery = require('jquery')(window);
+
 
 'use strict';
 
@@ -86,7 +82,7 @@ app.post('/uploadImage', function(req,res){
                     console.log('Error:  request error', error);
                     return;
                 }
-                console.log(response);
+                //console.log(response);
                 let jsonResponse = JSON.stringify(JSON.parse(body), null, '  ');
                 jsonResponse = JSON.parse(jsonResponse);
 
@@ -104,7 +100,12 @@ app.post('/uploadImage', function(req,res){
                 let sadness = jsonResponse[0]["faceAttributes"]["emotion"]["sadness"];
                 let surprise = jsonResponse[0]["faceAttributes"]["emotion"]["surprise"];
                 // exec('python emotion.py ' + anger + ' ' + contempt + ' ' + )
-
+                exec('python emotion.py ' + anger + ' ' + contempt + ' '+disgust+' '+fear+' '+happiness+' '+neutral+' '+sadness+' '+surprise, (error,stdout,stderr)=>{
+                    console.log(stdout);
+                    if(error){
+                        console.log('error:' + error);
+                    }
+                });
                 // $.ajax({
                 //     type: "POST",
                 //     url: "~/pythoncode.py",
