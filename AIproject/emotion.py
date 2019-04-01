@@ -37,12 +37,21 @@ rf.fit(X_train, y_train)
 # 5. check the model performance
 pred = rf.predict(X_test)
 # print(pred)
-print(r2_score(y_test, pred))
-print(mean_squared_error(y_test, pred))
+# print(r2_score(y_test, pred))
+# print(mean_squared_error(y_test, pred))
 
 # 6. test one
-d = {'anger': [0], 'contempt': [0], 'disgust': [0.1], 'fear': [1], 
-     'happiness': [1], 'neutral': [0], 'sadness': [0], 'suprise': [0]}
-df2 = pd.DataFrame(data=d)
-pred = clf.predict(df2)
-print(pred)
+# d = {'anger': [0], 'contempt': [0], 'disgust': [0.1], 'fear': [1], 
+#      'happiness': [1], 'neutral': [0], 'sadness': [0], 'suprise': [0]}
+# df2 = pd.DataFrame(data=d)
+# pred = clf.predict(df2)
+# print(pred)
+
+
+# API call
+def calculateVA(anger,contempt,disgust,fear,happiness,neutral,sadness,surprise):
+    d = {'anger': [anger],'contempt': [contempt],'disgust': [disgust],'fear': [fear],
+         'happiness': [happiness], 'neutral': [neutral], 'sadness': [sadness], 'surprise': [surprise]}
+    df2 = pd.DataFrame(data=d)
+    pred = clf.predict(df2)
+    return pred
