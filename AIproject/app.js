@@ -18,17 +18,21 @@ const request = require('request');
     const {Storage} = require('@google-cloud/storage');
 
     // Creates a client
-    const storage = new Storage({keyFilename, projectId});
+    const storage = new Storage({
+        projectId: projectId,
+        keyFilename: keyFilename
+    });
     const bucket = storage.bucket('emousic_image');
 
+    var tmpName;
 
 
 
 app.post('/uploadImage', function(req,res){
-    
+
     res.json({"music1":"song1"});
 
-    
+
     const form = new multiparty.Form();
     form.parse(req,function(err,fields,files){
         // console.log(fields);
@@ -38,18 +42,23 @@ app.post('/uploadImage', function(req,res){
         // console.log(fileName);
         // const file = bucket.file(fileName);
         // console.log('file:' + file);
+        tmpName = files['files'][0]['path'].split("/").slice(-1)[0];
+        console.log("tmpName： " + tmpName);
         bucket.upload(files['files'][0]['path']).then();
-        const tmpName = files['files'][0]['path'].split("/").slice(-1)[0];
+        // noinspection JSAnnotator
+        // var waitTill = new Date(new Date().getTime() + 10 * 1000);
+        // while(waitTill > new Date()){}
 
-        const imageUrl = `https://storage.googleapis.com/emousic_image/${tmpName}`;
-        console.log(imageUrl);
-        const subscriptionKey = 'd56a4c64612f411eaebddccb1038fccd';
+        //const imageUrl = `https://storage.googleapis.com/emousic_image/${tmpName}`;
+        //console.log(imageUrl);
+        const subscriptionKey = '4455ad2e5936444da9341bbbfd1e594d';
 
         const uriBase = 'https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect';
 
-        // const imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/3/37/Dagestani_man_and_woman.jpg';
+        //const imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/3/37/Dagestani_man_and_woman.jpg';
+        const imageUrl = 'https://storage.googleapis.com/emousic_image/tqVLDY5ViY4M4Xi5SprXESXt.jpg';
 
-// Request parameters.
+
         const params = {
             'returnFaceId': 'true',
             'returnFaceLandmarks': 'false',
@@ -66,25 +75,55 @@ app.post('/uploadImage', function(req,res){
             }
         };
 
+
         request.post(options, (error, response, body) => {
+
             if (error) {
-                console.log('Error: ', error);
+                console.log('Error:  request error', error);
                 return;
             }
             let jsonResponse = JSON.stringify(JSON.parse(body), null, '  ');
             console.log('JSON Response\n');
             console.log(jsonResponse);
-            
-        });
+            //
+            // let exec = require('child_process').exec;
+            let anger = jsonResponse[0]["faceAttributes"]['emotion']["anger"];
+            let contempt = jsonResponse[0]["faceAttributes"]['emotion']["contempt"];
+            let disgust = jsonResponse[0]["faceAttributes"]['emotion']["disgust"];
+            let fear = jsonResponse[0]["faceAttributes"]["emotion"]["fear"];
+            let happiness = jsonResponse[0]["faceAttributes"]["emotion"]["happiness"];
+            let neutral = jsonResponse[0]["faceAttributes"]["emotion"]["neutral"];
+            let sadness = jsonResponse[0]["faceAttributes"]["emotion"]["sadness"];
+            let surprise = jsonResponse[0]["faceAttributes"]["emotion"]["surprise"];
+            // exec('python emotion.py ' + anger + ' ' + contempt + ' ' + )
+            $.ajax({
+                type: "POST",
+                url: "~/pythoncode.py",
+                data: {
+                    anger: anger,
+                    contempt: contempt,
+                    disgust: disgust,
+                    fear: fear,
+                    happiness: happiness,
+                    neutral: neutral,
+                    sadness: sadness,
+                    surprise: surprise
+                }
+            }).done(function (av) {
+                // do something
+                console.log(av);
+            });
+        })
+
 
     });
 
 
 
-
-
-
 });
+
+
+
 
 app.get('/',function(req,res){
     res.sendFile(path.resolve(__dirname+"/view/index.html"));
@@ -92,4 +131,4 @@ app.get('/',function(req,res){
 
 http.listen(8082,function(){
 	console.log("server running on 127.0.0.1:8082");
-})
+});
