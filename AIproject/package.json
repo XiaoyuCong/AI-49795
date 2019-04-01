@@ -7,7 +7,11 @@
     "@google-cloud/storage": "^2.4.3",
     "express": "^4.16.4",
     "multiparty": "^4.2.1",
+<<<<<<< HEAD
     "request": "^2.88.0"
+=======
+    "semantic-ui": "^2.4.2"
+>>>>>>> dc07eafd530fcbfedeafa7d14c1ae975b8ab35e7
   },
   "devDependencies": {},
   "scripts": {

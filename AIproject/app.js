@@ -25,7 +25,10 @@ const request = require('request');
 
 
 app.post('/uploadImage', function(req,res){
+    
+    res.json({"music1":"song1"});
 
+    
     const form = new multiparty.Form();
     form.parse(req,function(err,fields,files){
         // console.log(fields);
@@ -71,6 +74,7 @@ app.post('/uploadImage', function(req,res){
             let jsonResponse = JSON.stringify(JSON.parse(body), null, '  ');
             console.log('JSON Response\n');
             console.log(jsonResponse);
+            
         });
 
     });

@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <style>
     .bg-head {
@@ -21,6 +23,17 @@
 </head>
 
 <body>
+  <script>
+    $(document).ready(function(){
+      $('#hidden_frame').load(function(){
+        alert("aaa");
+            var text=$(this).contents().find("body").text();
+            console.log(text);
+        });
+    });
+      
+  </script>
+
   <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand" style="color:#ffffff">Emousic</a>
     <form class="form-inline">
@@ -37,23 +50,25 @@
     </div>
     <div class="row">
       <div class="col ml-3">
-        <form action="http://127.0.0.1:8082/uploadImage" method="post" enctype="multipart/form-data">
+        <form action="http://127.0.0.1:8082/uploadImage" method="post" enctype="multipart/form-data" target="hidden_frame">
           <label class="btn btn-outline-success">
             Select your image
             <input type="file" hidden name="files" accept="image/*" onchange="changImg(event)">
           </label>
           </br>
-          <img id="image" src="">
+          <img id="image" src="picture/demo.jpg" height="200px" width="200px">
           </br>
           <label class="btn btn-outline-success">
             Upload this image
             <input type="submit" hidden/>
           </label>
         </form>
+        
+
       </div>
     </div>
   </div>
-
+  <iframe name='hidden_frame' id="hidden_frame" style='display: none'></iframe>
   <div class="container m-3">
     <div class="row">
       <div class="col">

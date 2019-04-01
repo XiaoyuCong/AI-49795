@@ -1,10 +1,12 @@
-p{
-    text-align: center;
-    font-size: 30px;
-}
+
 
 h1{
     text-align: center;
-    color : blue;
-    font-size: 80px;
+    color :white;
+    font-size: 200px;
+}
+
+h2{
+    color: white;
+    font-size: 70px;
 }
