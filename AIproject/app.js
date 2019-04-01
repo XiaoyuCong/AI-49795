@@ -102,6 +102,18 @@ app.post('/uploadImage', function(req,res){
                 // exec('python emotion.py ' + anger + ' ' + contempt + ' ' + )
                 exec('python emotion.py ' + anger + ' ' + contempt + ' '+disgust+' '+fear+' '+happiness+' '+neutral+' '+sadness+' '+surprise, (error,stdout,stderr)=>{
                     console.log(stdout);
+
+                    var result = stdout;
+                    var valence = stdout.substring(stdout.indexOf(" ")+1, stdout.length - 3);
+                    var arsoual = stdout.substring(2, stdout.indexOf(" "));
+                    //console.log(stdout.substring(2, stdout.indexOf(" ")));
+                    //console.log(stdout.substring(stdout.indexOf(" ")+1, stdout.length - 3));
+                    exec('python getSong.py '+valence+' '+arsoual,(error,stdout,stderr)=>{
+                        console.log(stdout);
+                        if(error){
+                            console.log('error:' + error);
+                        }
+                    })
                     if(error){
                         console.log('error:' + error);
                     }
