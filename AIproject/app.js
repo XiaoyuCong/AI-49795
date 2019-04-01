@@ -8,6 +8,14 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 const request = require('request');
 
+var jsdom = require("jsdom");
+const { JSDOM } = jsdom;
+const { window } = new JSDOM();
+const { document } = (new JSDOM('')).window;
+global.document = document;
+
+var $ = jQuery = require('jquery')(window);
+
 'use strict';
 
 
@@ -44,76 +52,89 @@ app.post('/uploadImage', function(req,res){
         // console.log('file:' + file);
         tmpName = files['files'][0]['path'].split("/").slice(-1)[0];
         console.log("tmpName： " + tmpName);
-        bucket.upload(files['files'][0]['path']).then();
+        bucket.upload(files['files'][0]['path']).then( function v(){
+            const imageUrl = `https://storage.googleapis.com/emousic_image/${tmpName}`;
+            //console.log(imageUrl);
+            const subscriptionKey = '4455ad2e5936444da9341bbbfd1e594d';
+
+            const uriBase = 'https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect';
+
+            //const imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/3/37/Dagestani_man_and_woman.jpg';
+            //const imageUrl = 'https://storage.googleapis.com/emousic_image/tqVLDY5ViY4M4Xi5SprXESXt.jpg';
+
+
+            const params = {
+                'returnFaceId': 'true',
+                'returnFaceLandmarks': 'false',
+                'returnFaceAttributes': 'emotion'
+            };
+
+            const options = {
+                uri: uriBase,
+                qs: params,
+                body: '{"url": ' + '"' + imageUrl + '"}',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Ocp-Apim-Subscription-Key' : subscriptionKey
+                }
+            };
+
+
+            request.post(options, (error, response, body) => {
+
+                if (error) {
+                    console.log('Error:  request error', error);
+                    return;
+                }
+                console.log(response);
+                let jsonResponse = JSON.stringify(JSON.parse(body), null, '  ');
+                jsonResponse = JSON.parse(jsonResponse);
+
+                //
+                // let exec = require('child_process').exec;
+                // console.log(jsonResponse);
+                // console.log()
+                // console.log(jsonResponse[0]);
+                let anger = jsonResponse[0]["faceAttributes"]["emotion"]["anger"];
+                let contempt = jsonResponse[0]["faceAttributes"]["emotion"]["contempt"];
+                let disgust = jsonResponse[0]["faceAttributes"]["emotion"]["disgust"];
+                let fear = jsonResponse[0]["faceAttributes"]["emotion"]["fear"];
+                let happiness = jsonResponse[0]["faceAttributes"]["emotion"]["happiness"];
+                let neutral = jsonResponse[0]["faceAttributes"]["emotion"]["neutral"];
+                let sadness = jsonResponse[0]["faceAttributes"]["emotion"]["sadness"];
+                let surprise = jsonResponse[0]["faceAttributes"]["emotion"]["surprise"];
+                // exec('python emotion.py ' + anger + ' ' + contempt + ' ' + )
+
+                // $.ajax({
+                //     type: "POST",
+                //     url: "~/pythoncode.py",
+                //     data: {
+                //         anger: anger,
+                //         contempt: contempt,
+                //         disgust: disgust,
+                //         fear: fear,
+                //         happiness: happiness,
+                //         neutral: neutral,
+                //         sadness: sadness,
+                //         surprise: surprise
+                //     }
+                // }).done(function (av) {
+                //     // do something
+                //     console.log(av);
+                // });
+
+        });
+        }
+
+
+
+
+        );
         // noinspection JSAnnotator
         // var waitTill = new Date(new Date().getTime() + 10 * 1000);
         // while(waitTill > new Date()){}
 
-        //const imageUrl = `https://storage.googleapis.com/emousic_image/${tmpName}`;
-        //console.log(imageUrl);
-        const subscriptionKey = '4455ad2e5936444da9341bbbfd1e594d';
 
-        const uriBase = 'https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect';
-
-        //const imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/3/37/Dagestani_man_and_woman.jpg';
-        const imageUrl = 'https://storage.googleapis.com/emousic_image/tqVLDY5ViY4M4Xi5SprXESXt.jpg';
-
-
-        const params = {
-            'returnFaceId': 'true',
-            'returnFaceLandmarks': 'false',
-            'returnFaceAttributes': 'emotion'
-        };
-
-        const options = {
-            uri: uriBase,
-            qs: params,
-            body: '{"url": ' + '"' + imageUrl + '"}',
-            headers: {
-                'Content-Type': 'application/json',
-                'Ocp-Apim-Subscription-Key' : subscriptionKey
-            }
-        };
-
-
-        request.post(options, (error, response, body) => {
-
-            if (error) {
-                console.log('Error:  request error', error);
-                return;
-            }
-            let jsonResponse = JSON.stringify(JSON.parse(body), null, '  ');
-            console.log('JSON Response\n');
-            console.log(jsonResponse);
-            //
-            // let exec = require('child_process').exec;
-            let anger = jsonResponse[0]["faceAttributes"]['emotion']["anger"];
-            let contempt = jsonResponse[0]["faceAttributes"]['emotion']["contempt"];
-            let disgust = jsonResponse[0]["faceAttributes"]['emotion']["disgust"];
-            let fear = jsonResponse[0]["faceAttributes"]["emotion"]["fear"];
-            let happiness = jsonResponse[0]["faceAttributes"]["emotion"]["happiness"];
-            let neutral = jsonResponse[0]["faceAttributes"]["emotion"]["neutral"];
-            let sadness = jsonResponse[0]["faceAttributes"]["emotion"]["sadness"];
-            let surprise = jsonResponse[0]["faceAttributes"]["emotion"]["surprise"];
-            // exec('python emotion.py ' + anger + ' ' + contempt + ' ' + )
-            $.ajax({
-                type: "POST",
-                url: "~/pythoncode.py",
-                data: {
-                    anger: anger,
-                    contempt: contempt,
-                    disgust: disgust,
-                    fear: fear,
-                    happiness: happiness,
-                    neutral: neutral,
-                    sadness: sadness,
-                    surprise: surprise
-                }
-            }).done(function (av) {
-                // do something
-                console.log(av);
-            });
-        })
 
 
     });
