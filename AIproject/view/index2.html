@@ -12,6 +12,13 @@
                   $("#step1").hide();
                   $("#step2").hide();
                   $("#step3").hide();
+                  $('#hidden_frame').load(function(){
+                        var text=$(this).contents().find("body").text();
+                        //var j=$.parseJSON(text);
+                        
+                        alert("aaa");
+                        console.log(text);
+                    });
                   $("#start").click(function(){
                     $("#step1").fadeIn();
                   });
@@ -20,10 +27,28 @@
                     $('#btn1').hide();
                   });
                   $("#btn2").click(function(){
+                    
                     $("#step3").fadeIn();
+                    $("#btn2").hide();
                   });
                 });
+            function uploadImage(){
+                var formData = new FormData($("#fileUpload"));
+                console.log(formData);
+                $.ajax({
+                    url:"http://127.0.0.1:8082/uploadImage",
+                    type:"POST",
+                    dataType:"json",
+                    data:formData,
+                    contentType:false,
+                    processData:false,
+                    success:function(data){
+                        console.log(data);
+                    }
+                });
+            }
         </script>
+        
     </head>
 
     <body>
@@ -72,27 +97,29 @@
                         <div class="description">2.upload your photo</div>
                     </div>
                 </div>
-                <form action="http://127.0.0.1:8082/uploadImage" method="post" enctype="multipart/form-data">  
-                    <input type="file" name="files" accept="image/*" onchange="changImg(event)" > 
+                </br>
+                <img id="image" src="picture/demo.jpg" height="200px" width="200px">  
+                </br>
+                <form action="http://127.0.0.1:8082/uploadImage" method="post" enctype="multipart/form-data" id="fileUpload" target="hidden_frame">  
+                    <input type="file" name="files" accept="image/*" onchange="changImg(event)" id="image"> 
                     </br> 
-                    <img id="image" src="" >  
-                    </br>
-                    <input type="submit" value="upload this image" id="btn2"/>
+                    
+                    <input type="submit" value="upload this image"/>
                 </form>  
+                <div class="ui medium button" id="btn2">next<i class="right arrow icon"></i></div>
             </center>
+            <iframe name='hidden_frame' id="hidden_frame" style='display: none'></iframe>
     </div>
     <div id="step3">
         <center>
-                <div class="ui vertical steps">
-                        <div class="completed step">
-                          <i class="credit card icon"></i>
-                          <div class="content">
-                            <div class="title">enjoy</div>
-                            <div class="description">click on music you are interested</div>
-                          </div>
-                        </div>
-                      </div>
+            <div class="ui text container">
+                <h1>Enjoy!</h1>
+                <ol id="resultList">
+                    <li>music1</li>
+                    <li>music2</li>
+                </ol>
             </div>
+            
         </center>
     </div>
     </body>
