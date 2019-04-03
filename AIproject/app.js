@@ -99,6 +99,15 @@ app.post('/uploadImage', function(req,res){
                 let neutral = jsonResponse[0]["faceAttributes"]["emotion"]["neutral"];
                 let sadness = jsonResponse[0]["faceAttributes"]["emotion"]["sadness"];
                 let surprise = jsonResponse[0]["faceAttributes"]["emotion"]["surprise"];
+                console.log("prediction of your emotion is:");
+                console.log("anger:" + anger);
+                console.log("contempt:" + contempt);
+                console.log("disgust:" + disgust);
+                console.log("fear:" + fear);
+                console.log("happiness:" + happiness);
+                console.log("neutral:" + neutral);
+                console.log("sadness:" + sadness);
+                console.log("surprise:" + surprise);
                 // exec('python emotion.py ' + anger + ' ' + contempt + ' ' + )
                 exec('python emotion.py ' + anger + ' ' + contempt + ' '+disgust+' '+fear+' '+happiness+' '+neutral+' '+sadness+' '+surprise, (error,stdout,stderr)=>{
                     console.log(stdout);
