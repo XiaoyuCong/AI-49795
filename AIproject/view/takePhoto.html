@@ -1,0 +1,84 @@
+    <!doctype html>
+    <html lang="en">
+    	<head>
+    		<title>GET VIDEO</title>
+            <meta charset="utf-8">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    	</head>
+    	<body>
+        
+    	<input type="button"  value="turn on your camera" onclick="getMedia()" />
+    	<video id="video" width="500px" height="500px" autoplay="autoplay"></video>
+    	<canvas id="canvas" width="500px" height="500px"></canvas>
+        <button id="snap" onclick="takePhoto()">take photo!</button>
+        <button id="submit" onclick="submit()">submit</button>
+        
+    	<script>
+            function submit () {
+
+                var mycanvas = document.getElementById("canvas");
+                var base64Data = mycanvas.toDataURL();
+
+                var blob = dataURItoBlob(base64Data);
+
+                var fd = new FormData();
+                fd.append("files", blob);
+                
+                var xmlHttp = new XMLHttpRequest();
+                xmlHttp.open("POST", "http:127.0.0.1:8082/uploadImage");
+                //xmlHttp.setRequestHeader("Authorization", 'Bearer ' + localStorage.token);//设置请求header,按需设定，非必须
+                xmlHttp.send(fd);
+                //ajax
+                xmlHttp.onreadystatechange = () => {
+                    //todo  your code...
+                    //alert("aaa");
+                };
+            };
+            function dataURItoBlob (base64Data) {
+                var byteString;
+                if (base64Data.split(',')[0].indexOf('base64') >= 0)
+                    byteString = atob(base64Data.split(',')[1]);
+                else
+                    byteString = unescape(base64Data.split(',')[1]);
+                var mimeString = base64Data.split(',')[0].split(':')[1].split(';')[0];
+                var ia = new Uint8Array(byteString.length);
+                for (var i = 0; i < byteString.length; i++) {
+                    ia[i] = byteString.charCodeAt(i);
+                }
+                return new Blob([ia], {type: mimeString});
+            };
+
+            function getMedia() {
+                let constraints = {
+                    video: {width: 500, height: 500},
+                    audio: true
+                };
+
+                let video = document.getElementById("video");
+
+                let promise = navigator.mediaDevices.getUserMedia(constraints);
+                promise.then(function (MediaStream) {
+                    video.srcObject = MediaStream;
+                    video.play();
+                });
+            }
+     
+          function takePhoto() {
+
+            let video = document.getElementById("video");
+            let canvas = document.getElementById("canvas");
+            let ctx = canvas.getContext('2d');
+            ctx.drawImage(video, 0, 0, 500, 500);
+            //var file = document.getElementById("file");
+            //var fReader = new FileReader();
+            //fReader.readAsDataURL(dataURLtoBlob(canvas.toDataURL()) );
+            //var image = document.getElementById("image");
+            //image.src = canvas.toDataURL("image/png");
+          }
+    </script>
+    </body>
+    </html>
+
+ 
+
