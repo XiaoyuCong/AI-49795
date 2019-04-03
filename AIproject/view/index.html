@@ -8,6 +8,7 @@
 			  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
 			  crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta http-equiv="Access-Control-Allow-Origin" content="*">
   <style>
     .bg-head {
       color: #ffffff;
@@ -25,16 +26,6 @@
 </head>
 
 <body>
-  <script>
-    $(document).ready(function(){
-      $('#hidden_frame').load(function(){
-        alert("aaa");
-            var text=$(this).contents().find("body").text();
-            console.log(text);
-        });
-    });
-      
-  </script>
 
   <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand" style="color:#ffffff">Emousic</a>
@@ -57,6 +48,10 @@
             Select your image
             <input type="file" hidden name="files" accept="image/*" onchange="changImg(event)">
           </label>
+          or
+          <label class="btn btn-outline-success" onclick="toTakePhoto()">
+              take a photo now
+            </label>
           </br>
           <img id="image" src="picture/demo.jpg" height="200px" width="200px">
           </br>
@@ -84,6 +79,11 @@
   </div>
   
   <script>
+    function toTakePhoto() {
+      var xmlHttp = new XMLHttpRequest();
+      xmlHttp.open("GET", "http://127.0.0.1:8082/takePhoto");
+      xmlHttp.send();
+    }
     function changImg(e) {
       for (var i = 0; i < e.target.files.length; i++) {
         var file = e.target.files.item(i);

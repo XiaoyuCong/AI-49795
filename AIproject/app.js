@@ -6,6 +6,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 var exec = require('child_process').exec;
+app.use(express.static('view'));
 
 const request = require('request');
 
@@ -34,13 +35,13 @@ const request = require('request');
 
 app.post('/uploadImage', function(req,res){
 
-    res.json({"music1":"song1"});
+    //res.json({"music1":"song1"});
 
 
     const form = new multiparty.Form();
     form.parse(req,function(err,fields,files){
         // console.log(fields);
-        // console.log(files);
+        console.log(files);
         // console.log(files['files'][0]['originalFilename']);
         // const fileName = path.basename(files['files'][0]['originalFilename']);
         // console.log(fileName);
@@ -170,6 +171,10 @@ app.post('/uploadImage', function(req,res){
 
 app.get('/',function(req,res){
     res.sendFile(path.resolve(__dirname+"/view/index.html"));
+});
+
+app.get('/takePhoto', (req,res) =>{
+    res.sendFile(path.resolve(__dirname+"/view/takePhoto.html"));
 });
 
 http.listen(8082,function(){
