@@ -91,43 +91,49 @@ app.post('/uploadImage', function(req,res){
                 // let exec = require('child_process').exec;
                 // console.log(jsonResponse);
                 // console.log()
-                // console.log(jsonResponse[0]);
-                let anger = jsonResponse[0]["faceAttributes"]["emotion"]["anger"];
-                let contempt = jsonResponse[0]["faceAttributes"]["emotion"]["contempt"];
-                let disgust = jsonResponse[0]["faceAttributes"]["emotion"]["disgust"];
-                let fear = jsonResponse[0]["faceAttributes"]["emotion"]["fear"];
-                let happiness = jsonResponse[0]["faceAttributes"]["emotion"]["happiness"];
-                let neutral = jsonResponse[0]["faceAttributes"]["emotion"]["neutral"];
-                let sadness = jsonResponse[0]["faceAttributes"]["emotion"]["sadness"];
-                let surprise = jsonResponse[0]["faceAttributes"]["emotion"]["surprise"];
-                console.log("prediction of your emotion is:");
-                console.log("anger:" + anger);
-                console.log("contempt:" + contempt);
-                console.log("disgust:" + disgust);
-                console.log("fear:" + fear);
-                console.log("happiness:" + happiness);
-                console.log("neutral:" + neutral);
-                console.log("sadness:" + sadness);
-                console.log("surprise:" + surprise);
-                // exec('python emotion.py ' + anger + ' ' + contempt + ' ' + )
-                exec('python emotion.py ' + anger + ' ' + contempt + ' '+disgust+' '+fear+' '+happiness+' '+neutral+' '+sadness+' '+surprise, (error,stdout,stderr)=>{
-                    console.log(stdout);
-
-                    var result = stdout;
-                    var valence = stdout.substring(stdout.indexOf(" ")+1, stdout.length - 3);
-                    var arsoual = stdout.substring(2, stdout.indexOf(" "));
-                    //console.log(stdout.substring(2, stdout.indexOf(" ")));
-                    //console.log(stdout.substring(stdout.indexOf(" ")+1, stdout.length - 3));
-                    exec('python getSong.py '+valence+' '+arsoual,(error,stdout,stderr)=>{
+                //console.log(jsonResponse[0]);
+                if(typeof(jsonResponse[0]) == 'undefined'){
+                    console.log("there is no face detected in the picture");
+                }
+                else{
+                    let anger = jsonResponse[0]["faceAttributes"]["emotion"]["anger"];
+                    let contempt = jsonResponse[0]["faceAttributes"]["emotion"]["contempt"];
+                    let disgust = jsonResponse[0]["faceAttributes"]["emotion"]["disgust"];
+                    let fear = jsonResponse[0]["faceAttributes"]["emotion"]["fear"];
+                    let happiness = jsonResponse[0]["faceAttributes"]["emotion"]["happiness"];
+                    let neutral = jsonResponse[0]["faceAttributes"]["emotion"]["neutral"];
+                    let sadness = jsonResponse[0]["faceAttributes"]["emotion"]["sadness"];
+                    let surprise = jsonResponse[0]["faceAttributes"]["emotion"]["surprise"];
+                    console.log("prediction of your emotion is:");
+                    console.log("anger:" + anger);
+                    console.log("contempt:" + contempt);
+                    console.log("disgust:" + disgust);
+                    console.log("fear:" + fear);
+                    console.log("happiness:" + happiness);
+                    console.log("neutral:" + neutral);
+                    console.log("sadness:" + sadness);
+                    console.log("surprise:" + surprise);
+                    // exec('python emotion.py ' + anger + ' ' + contempt + ' ' + )
+                    exec('python emotion.py ' + anger + ' ' + contempt + ' '+disgust+' '+fear+' '+happiness+' '+neutral+' '+sadness+' '+surprise, (error,stdout,stderr)=>{
                         console.log(stdout);
+
+                        var result = stdout;
+                        var valence = stdout.substring(stdout.indexOf(" ")+1, stdout.length - 3);
+                        var arsoual = stdout.substring(2, stdout.indexOf(" "));
+                        //console.log(stdout.substring(2, stdout.indexOf(" ")));
+                        //console.log(stdout.substring(stdout.indexOf(" ")+1, stdout.length - 3));
+                        exec('python getSong.py '+valence+' '+arsoual,(error,stdout,stderr)=>{
+                            console.log(stdout);
+                            if(error){
+                                console.log('error:' + error);
+                            }
+                        })
                         if(error){
                             console.log('error:' + error);
                         }
-                    })
-                    if(error){
-                        console.log('error:' + error);
-                    }
-                });
+                    });
+                }
+                
                 // $.ajax({
                 //     type: "POST",
                 //     url: "~/pythoncode.py",
