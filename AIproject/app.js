@@ -52,9 +52,9 @@ app.post('/uploadImage', function(req,res){
         bucket.upload(files['files'][0]['path']).then( function v(){
             const imageUrl = `https://storage.googleapis.com/emousic_image/${tmpName}`;
             //console.log(imageUrl);
-            const subscriptionKey = '4455ad2e5936444da9341bbbfd1e594d';
+            const subscriptionKey = '169d650d71f343c3b9c3ad7ac157e45a';
 
-            const uriBase = 'https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect';
+            const uriBase = 'https://eastus.api.cognitive.microsoft.com/face/v1.0/detect';
 
             //const imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/3/37/Dagestani_man_and_woman.jpg';
             //const imageUrl = 'https://storage.googleapis.com/emousic_image/tqVLDY5ViY4M4Xi5SprXESXt.jpg';
@@ -133,7 +133,7 @@ app.post('/uploadImage', function(req,res){
                         }
                     });
                 }
-                
+
                 // $.ajax({
                 //     type: "POST",
                 //     url: "~/pythoncode.py",
