@@ -1,9 +1,8 @@
-    <!doctype html>
+    <!DOCTYPE html>
     <html lang="en">
     	<head>
     		<title>GET VIDEO</title>
             <meta charset="utf-8">
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
             <meta http-equiv="Access-Control-Allow-Origin" content="*">
     	</head>
     	<body>
@@ -16,7 +15,6 @@
         
     	<script>
             function submit () {
-
                 var mycanvas = document.getElementById("canvas");
                 var base64Data = mycanvas.toDataURL();
 
@@ -26,7 +24,8 @@
                 fd.append("files", blob);
                 
                 var xmlHttp = new XMLHttpRequest();
-                xmlHttp.open("POST", "http:127.0.0.1:8082/uploadImage");
+                console.log(fd.values());
+                xmlHttp.open("POST", "http://127.0.0.1:8082/uploadImage");
                 //xmlHttp.setRequestHeader("Authorization", 'Bearer ' + localStorage.token);//设置请求header,按需设定，非必须
                 xmlHttp.send(fd);
                 //ajax
