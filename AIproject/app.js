@@ -176,10 +176,11 @@ app.post('/uploadImage', function(req,res){
 
 
 app.get('/',function(req,res){
-    res.sendFile(path.resolve(__dirname+"/view/index.html"));
+    res.sendFile(path.resolve(__dirname+"/view/mainpage.html"));
 });
 
 app.get('/takePhoto', (req,res) =>{
+    //console.log('aa');
     res.sendFile(path.resolve(__dirname+"/view/takePhoto.html"));
 });
 

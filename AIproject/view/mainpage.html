@@ -81,9 +81,7 @@
   
   <script>
     function toTakePhoto() {
-      var xmlHttp = new XMLHttpRequest();
-      xmlHttp.open("GET", "http://127.0.0.1:8082/takePhoto");
-      xmlHttp.send();
+      window.location.href='takePhoto.html';
     }
     function changImg(e) {
       for (var i = 0; i < e.target.files.length; i++) {
