@@ -23,7 +23,7 @@ def get_song(picture_valence, picture_arousal):
     for i in range(5,num):
         record = data.iloc[i]
         diff = abs(picture_valence - record['valence_mean']) + abs(picture_arousal - record['arousal_mean'])
-        max_song = result.keys()[0]
+        max_song = list(result.keys())[0]
         max_diff = result[max_song][0]
         for song in result:
             if result[song][0] > max_diff:
