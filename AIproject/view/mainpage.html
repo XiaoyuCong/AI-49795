@@ -88,18 +88,23 @@
         console.log(files);
         var formData = new FormData();
         formData.append("files",files);
-        $.ajax({
-          type : "POST",
-          url : "http://127.0.0.1:8082/uploadImage",
-          data : formData,
-          cache : false,
-          success : function(){
-            alert("aaa");
-          },
-          error : function (){
-            alert("error");
-          }
-        });
+        var xmlHttp = new XMLHttpRequest();
+        //console.log(fd.values());
+        xmlHttp.open("POST", "http://127.0.0.1:8082/uploadImage");
+        //xmlHttp.setRequestHeader("Authorization", 'Bearer ' + localStorage.token);//设置请求header,按需设定，非必须
+        xmlHttp.send(formData);
+        // $.ajax({
+        //   type : "POST",
+        //   url : "http://127.0.0.1:8082/uploadImage",
+        //   data : formData,
+        //   cache : false,
+        //   success : function(){
+        //     alert("aaa");
+        //   },
+        //   error : function (){
+        //     alert("error");
+        //   }
+        // });
       })
     });
     
