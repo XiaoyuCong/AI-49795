@@ -12,16 +12,16 @@ def get_song(picture_valence, picture_arousal):
     picture_valence = picture_valence * 5 + 5
     picture_arousal = picture_arousal * 5 + 5
     data = pd.read_csv('music.csv')
-    num = int(data.describe().ix[0, 0])
+    num = data.shape[0]
     #min_diff = 100
 
     for i in range(5):
-        record = data.ix[i,:]
+        record = data.iloc[i]
         diff = abs(picture_valence - record['valence_mean']) + abs(picture_arousal - record['arousal_mean'])
         result[record['Song title']] = (diff,record['Artist'])
     #song_title = ""
     for i in range(5,num):
-        record = data.ix[i, :]
+        record = data.iloc[i]
         diff = abs(picture_valence - record['valence_mean']) + abs(picture_arousal - record['arousal_mean'])
         max_song = result.keys()[0]
         max_diff = result[max_song][0]

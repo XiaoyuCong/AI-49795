@@ -37,7 +37,7 @@ app.post('/uploadImage', function(req,res){
 
     //res.json({"music1":"song1"});
 
-
+    //res.send('aaa');
     const form = new multiparty.Form();
     form.parse(req,function(err,fields,files){
         // console.log(fields);
@@ -48,7 +48,7 @@ app.post('/uploadImage', function(req,res){
         // const file = bucket.file(fileName);
         // console.log('file:' + file);
         tmpName = files['files'][0]['path'].split("/").slice(-1)[0];
-        console.log("tmpName： " + tmpName);
+        //console.log("tmpName： " + tmpName);
         bucket.upload(files['files'][0]['path']).then( function v(){
             const imageUrl = `https://storage.googleapis.com/emousic_image/${tmpName}`;
             //console.log(imageUrl);
@@ -132,6 +132,8 @@ app.post('/uploadImage', function(req,res){
                             console.log('error:' + error);
                         }
                     });
+
+                    
                 }
 
                 // $.ajax({
