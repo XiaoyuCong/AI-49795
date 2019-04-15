@@ -93,6 +93,13 @@
         xmlHttp.open("POST", "http://127.0.0.1:8082/uploadImage");
         //xmlHttp.setRequestHeader("Authorization", 'Bearer ' + localStorage.token);//设置请求header,按需设定，非必须
         xmlHttp.send(formData);
+        xmlHttp.onreadystatechange=function()
+        {
+          if (xmlHttp.readyState==4)
+          {
+            alert(xmlHttp.responseText);
+          }
+        }
         // $.ajax({
         //   type : "POST",
         //   url : "http://127.0.0.1:8082/uploadImage",

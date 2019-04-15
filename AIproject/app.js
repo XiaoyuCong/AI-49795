@@ -86,6 +86,9 @@ app.post('/uploadImage', function(req,res){
                         console.log("arousal " + arousal);
                         exec('python getSong.py '+valence+' '+arousal,(error,stdout,stderr)=>{
                             console.log(stdout);
+                            //return to front end
+                            res.send(stdout);
+
                             if(error){
                                 console.log('error:' + error);
                             }
