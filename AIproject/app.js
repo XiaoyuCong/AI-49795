@@ -124,6 +124,9 @@ app.post('/uploadImage', function(req,res){
                         //console.log(stdout.substring(stdout.indexOf(" ")+1, stdout.length - 3));
                         exec('python getSong.py '+valence+' '+arsoual,(error,stdout,stderr)=>{
                             console.log(stdout);
+                            //return to front end
+                            res.send(stdout);
+
                             if(error){
                                 console.log('error:' + error);
                             }
