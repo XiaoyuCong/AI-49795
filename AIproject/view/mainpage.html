@@ -97,7 +97,14 @@
         {
           if (xmlHttp.readyState==4)
           {
-            alert(xmlHttp.responseText);
+            //alert(xmlHttp.responseText);
+            if(xmlHttp.responseText == "there is no face detected in the picture"){
+              alert("there is no face detected in the picture");
+            }
+            else{
+              var songs = xmlHttp.responseText.split('/');
+              console.log(songs);
+            }
           }
         }
         // $.ajax({

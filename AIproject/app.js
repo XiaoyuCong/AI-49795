@@ -60,6 +60,7 @@ app.post('/uploadImage', function(req,res){
                 jsonResponse = JSON.parse(jsonResponse);
                 if(typeof(jsonResponse[0]) === 'undefined'){
                     console.log("there is no face detected in the picture");
+                    res.send("there is no face detected in the picture");
                 }
                 else{
                     let anger = jsonResponse[0]["faceAttributes"]["emotion"]["anger"];
