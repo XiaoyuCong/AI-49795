@@ -81,10 +81,10 @@ app.post('/uploadImage', function(req,res){
                     console.log("sadness:" + sadness);
                     console.log("surprise:" + surprise);
                     exec('python emotion.py ' + anger + ' ' + contempt + ' ' + disgust + ' ' + fear + ' ' + happiness + ' ' + neutral + ' ' + sadness + ' ' + surprise, (error,stdout,stderr)=>{
-                        let valence = stdout.substring(stdout.indexOf(" ")+1, stdout.length - 3);
-                        let arousal = stdout.substring(2, stdout.indexOf(" "));
+                        let valence = stdout.substring(13, stdout.length - 3);
+                        let arousal = stdout.substring(2, 12);
                         console.log("valence: " + valence);
-                        console.log("arousal " + arousal);
+                        console.log("arousal: " + arousal);
                         exec('python getSong.py '+valence+' '+arousal,(error,stdout,stderr)=>{
                             console.log(stdout);
                             //return to front end

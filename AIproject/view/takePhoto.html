@@ -6,13 +6,16 @@
             <meta http-equiv="Access-Control-Allow-Origin" content="*">
     	</head>
     	<body>
-        
+
     	<input type="button"  value="turn on your camera" onclick="getMedia()" />
     	<video id="video" width="500px" height="500px" autoplay="autoplay"></video>
     	<canvas id="canvas" width="500px" height="500px"></canvas>
         <button id="snap" onclick="takePhoto()">take photo!</button>
         <button id="submit" onclick="submit()">submit</button>
-        
+        <h4> Get your result</h4>
+        <div id="testInput"></div>
+        <div id="resultList"></div>
+
     	<script>
             function submit () {
                 var mycanvas = document.getElementById("canvas");
@@ -22,18 +25,36 @@
 
                 var fd = new FormData();
                 fd.append("files", blob);
-                
+
                 var xmlHttp = new XMLHttpRequest();
                 //console.log(fd.values());
                 xmlHttp.open("POST", "http://127.0.0.1:8082/uploadImage");
                 //xmlHttp.setRequestHeader("Authorization", 'Bearer ' + localStorage.token);//设置请求header,按需设定，非必须
                 xmlHttp.send(fd);
                 //ajax
-                xmlHttp.onreadystatechange = () => {
-                    //todo  your code...
-                    //alert("aaa");
-                    alert(xmlHttp.responseText);
-                };
+                xmlHttp.onreadystatechange=function()
+                {
+                    if (xmlHttp.readyState === 4)
+                    {
+                        //alert(xmlHttp.responseText);
+                        if(xmlHttp.responseText === "there is no face detected in the picture"){
+                            alert("there is no face detected in the picture");
+                        }
+                        else{
+                            songs = xmlHttp.responseText.split('/');
+                            document.getElementById("resultList").innerHTML=
+                                '<ol>' + '<li>' + songs[0] + '</li>' +
+                                '<li>' + songs[1] + '</li>' +
+                                '<li>' + songs[2] + '</li>' +
+                                '<li>' + songs[3] + '</li>' +
+                                '<li>' + songs[4] + '</li>';
+                            document.getElementById("testInput").innerHTML=
+                                '<i>valence(unpleasant->pleasant): ' + songs[6]  + '    arousal(calm->excited): ' + songs[7] + '</i>'
+                                + '<br>' + '<br>';
+                            console.log(songs);
+                        }
+                    }
+                }
             };
             function dataURItoBlob (base64Data) {
                 var byteString;
@@ -63,7 +84,7 @@
                     video.play();
                 });
             }
-     
+
           function takePhoto() {
 
             let video = document.getElementById("video");
@@ -80,5 +101,5 @@
     </body>
     </html>
 
- 
+
 
