@@ -1,2 +1,32 @@
-For AI-49795
+For AI-49795, Emousic group
 Xiaoyu Cong, Yuxin Liang, Jiajing Xiong
+
+To try our product, please follow these steps:
+
+1.download the project from github:
+https://github.com/XiaoyuCong/AI-49795.git
+
+2.enter the subfolder AIproject
+
+cd ./AIproject
+
+3.run the server
+
+node app.js
+
+4.open your browser, and input the address
+127.0.0.1:8082
+
+5.you may choose upload your picture from your computer
+
+6.or choose take a picture now and allow your browser to turn on camera
+
+7.in both methods, after the picture is prepared well, click on submit button
+
+8.the result include title and artist of the song, but because of the heavy load of music file, you can not listen to it within the app
+
+9.If you meet some questions in step 3 and 4, you may install some required module just following the notice like
+
+npm install express --save
+
+
