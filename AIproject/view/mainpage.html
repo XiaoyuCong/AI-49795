@@ -63,66 +63,65 @@
             Upload this image
           </label>
         </form>
-        
+
 
       </div>
     </div>
   </div>
-  <iframe name='hidden_frame' id="hidden_frame" style='display: none'></iframe>
+  
   <div class="container m-3">
     <div class="row">
       <div class="col">
         <h4>2. Get your result</h4>
-        <ol id="resultList">
-          <li>music1</li>
-          <li>music2</li>
-        </ol>
+          <div id="testInput"></div>
+          <div id="resultList"></div>
       </div>
     </div>
   </div>
-  
+
   <script>
+
+      let songs;
     $(document).ready(function(){
       $("#upload").click(function (){
-        var files = $("#files")[0].files[0];
+        let files = $("#files")[0].files[0];
         console.log(files);
-        var formData = new FormData();
+        let formData = new FormData();
         formData.append("files",files);
-        var xmlHttp = new XMLHttpRequest();
+        let xmlHttp = new XMLHttpRequest();
         //console.log(fd.values());
         xmlHttp.open("POST", "http://127.0.0.1:8082/uploadImage");
         //xmlHttp.setRequestHeader("Authorization", 'Bearer ' + localStorage.token);//设置请求header,按需设定，非必须
         xmlHttp.send(formData);
         xmlHttp.onreadystatechange=function()
         {
-          if (xmlHttp.readyState==4)
+          if (xmlHttp.readyState === 4)
           {
             //alert(xmlHttp.responseText);
-            if(xmlHttp.responseText == "there is no face detected in the picture"){
+            if(xmlHttp.responseText === "there is no face detected in the picture"){
               alert("there is no face detected in the picture");
             }
             else{
-              var songs = xmlHttp.responseText.split('/');
+                songs = xmlHttp.responseText.split('/');
+                document.getElementById("resultList").innerHTML=
+                    '<ol>' + '<li>' + songs[0] + '</li>' +
+                    '<li>' + songs[1] + '</li>' +
+                    '<li>' + songs[2] + '</li>' +
+                    '<li>' + songs[3] + '</li>' +
+                    '<li>' + songs[4] + '</li>';
+                document.getElementById("testInput").innerHTML=
+                    '<i>valence(unpleasant->pleasant): ' + songs[6] + '</i>' + '<br>' +
+                    '<i>arousal(calm->excited): ' + songs[7] + '</i>'
+                    + '<br>' + '<br>';
               console.log(songs);
               
             }
           }
         }
-        // $.ajax({
-        //   type : "POST",
-        //   url : "http://127.0.0.1:8082/uploadImage",
-        //   data : formData,
-        //   cache : false,
-        //   success : function(){
-        //     alert("aaa");
-        //   },
-        //   error : function (){
-        //     alert("error");
-        //   }
-        // });
       })
     });
-    
+
+
     function toTakePhoto() {
       window.location.href='takePhoto.html';
     }
@@ -131,16 +130,16 @@
         var file = e.target.files.item(i);
         if (!(/^image\/.*$/i.test(file.type))) {
           alert("can only upload image");
-          continue; 
+          continue;
         }
-        var freader = new FileReader();  
-        freader.readAsDataURL(file);  
+        var freader = new FileReader();
+        freader.readAsDataURL(file);
         freader.onload = function(e) {
-          $("#image").attr("src",e.target.result);  
+          $("#image").attr("src",e.target.result);
         }
       }
     }
   </script>
 
-  
+
 </body>

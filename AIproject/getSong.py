@@ -24,11 +24,11 @@ def get_song(picture_valence, picture_arousal):
         record = data.iloc[i]
         diff = abs(picture_valence - record['valence_mean']) + abs(picture_arousal - record['arousal_mean'])
         max_song = list(result.keys())[0]
-        max_diff = result[max_song][0]
+        max_diff = list(result[max_song])[0]
         for song in result:
             if result[song][0] > max_diff:
                 max_song = song
-                max_diff = result[song][0]
+                max_diff = list(result[song])[0]
         #print(len(result))
         if diff < max_diff:
             del result[max_song]
@@ -36,7 +36,7 @@ def get_song(picture_valence, picture_arousal):
     #print(result)
     result_string = ""
     for song in result:
-        result_string += song + '-' + result[song][1]+'/'
+        result_string += song + '-' + list(result[song])[1]+'/'
     print(result_string)
     #print(song_title)
     return  result_string
