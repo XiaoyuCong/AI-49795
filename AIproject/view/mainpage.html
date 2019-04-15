@@ -6,7 +6,10 @@
   <script
 			  src="https://code.jquery.com/jquery-3.3.1.js"
 			  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-			  crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <meta http-equiv="Access-Control-Allow-Origin" content="*">
   <style>
@@ -44,10 +47,10 @@
     </div>
     <div class="row">
       <div class="col ml-3">
-        <form action="http://127.0.0.1:8082/uploadImage" method="post" enctype="multipart/form-data" target="hidden_frame">
+        <form >
           <label class="btn btn-outline-success">
             Select your image
-            <input type="file" hidden name="files" accept="image/*" onchange="changImg(event)">
+            <input type="file" id="files" hidden name="files" accept="image/*" onchange="changImg(event)">
           </label>
           or
           <label class="btn btn-outline-success" onclick="toTakePhoto()">
@@ -56,9 +59,8 @@
           </br>
           <img id="image" src="picture/demo.jpg" >
           </br>
-          <label class="btn btn-outline-success">
+          <label class="btn btn-outline-success" id="upload">
             Upload this image
-            <input type="submit" hidden/>
           </label>
         </form>
         
@@ -80,6 +82,27 @@
   </div>
   
   <script>
+    $(document).ready(function(){
+      $("#upload").click(function (){
+        var files = $("#files")[0].files[0];
+        console.log(files);
+        var formData = new FormData();
+        formData.append("files",files);
+        $.ajax({
+          type : "POST",
+          url : "http://127.0.0.1:8082/uploadImage",
+          data : formData,
+          cache : false,
+          success : function(){
+            alert("aaa");
+          },
+          error : function (){
+            alert("error");
+          }
+        });
+      })
+    });
+    
     function toTakePhoto() {
       window.location.href='takePhoto.html';
     }
@@ -99,7 +122,5 @@
     }
   </script>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
 </body>
