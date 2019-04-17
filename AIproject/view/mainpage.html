@@ -40,43 +40,42 @@
   </nav>
 
   <div class="container m-3">
-    <div class="row mb-3">
-      <div class="col">
-        <h4>1. Upload your photo</h4>
+      <div class="row mb-3">
+          <div class="col">
+              <h4>1. Upload your photo</h4>
+          </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col ml-3">
-        <form >
-          <label class="btn btn-outline-success">
-            Select your image
-            <input type="file" id="files" hidden name="files" accept="image/*" onchange="changImg(event)">
-          </label>
-          or
-          <label class="btn btn-outline-success" onclick="toTakePhoto()">
-              take a photo now
-            </label>
-          </br>
-          <img id="image" src="picture/demo.jpg" >
-          </br>
-          <label class="btn btn-outline-success" id="upload">
-            Upload this image
-          </label>
-        </form>
-
-
+      <div class="row">
+          <div class="col ml-3">
+              <form>
+                  <label class="btn btn-outline-success">
+                      Select your image
+                      <input type="file" id="files" hidden name="files" accept="image/*" onchange="changImg(event)">
+                  </label>
+                  or
+                  <label class="btn btn-outline-success" onclick="toTakePhoto()">
+                      take a photo now
+                  </label>
+                  <br>
+                  <br>
+                  <img style='height:30%; width: 30%; object-fit: contain' id="image" src="picture/demo.jpg">
+                  <br>
+                  <br>
+                  <label class="btn btn-outline-success" id="upload">
+                      Upload this image
+                  </label>
+              </form>
+          </div>
       </div>
-    </div>
-  </div>
 
-  <div class="container m-3">
-    <div class="row">
-      <div class="col">
-        <h4>2. Get your result</h4>
-          <div id="testInput"></div>
-          <div id="resultList"></div>
+      <br>
+      <div class="row">
+          <div class="col">
+              <h4>2. Get your result</h4>
+              <div id="testInput"></div>
+              <div id="resultList"></div>
+          </div>
       </div>
-    </div>
   </div>
 
   <script>
