@@ -38,6 +38,7 @@ def get_song(picture_valence, picture_arousal):
     for song in result:
         result_string += song + '-' + list(result[song])[1]+'/'
     print(result_string)
+    sys.stdout.flush()
     #print(song_title)
     return  result_string
 

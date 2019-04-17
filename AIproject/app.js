@@ -118,6 +118,6 @@ app.get('/takePhoto', (req,res) =>{
     res.sendFile(path.resolve(__dirname+"/view/takePhoto.html"));
 });
 
-http.listen(8082,function(){
+http.listen(process.env.PORT || 8082,function(){
 	console.log("server running on 127.0.0.1:8082");
 });

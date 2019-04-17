@@ -161,7 +161,7 @@
         formData.append("files",files);
         let xmlHttp = new XMLHttpRequest();
         //console.log(fd.values());
-        xmlHttp.open("POST", "http://127.0.0.1:8082/uploadImage");
+        xmlHttp.open("POST", "http://emousic.herokuapp.com/uploadImage");
         //xmlHttp.setRequestHeader("Authorization", 'Bearer ' + localStorage.token);//设置请求header,按需设定，非必须
         xmlHttp.send(formData);
         xmlHttp.onreadystatechange=function()
@@ -232,7 +232,7 @@
 
                 var xmlHttp = new XMLHttpRequest();
                 //console.log(fd.values());
-                xmlHttp.open("POST", "http://127.0.0.1:8082/uploadImage");
+                xmlHttp.open("POST", "http://emousic.herokuapp.com/uploadImage");
                 //xmlHttp.setRequestHeader("Authorization", 'Bearer ' + localStorage.token);//设置请求header,按需设定，非必须
                 xmlHttp.send(fd);
                 //ajax

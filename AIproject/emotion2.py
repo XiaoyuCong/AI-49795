@@ -20,6 +20,7 @@ def calculateVA(anger,contempt,disgust,fear,happiness,neutral,sadness,surprise):
     df2 = pd.DataFrame(data=d)
     pred = rf.predict(df2)
     print(pred)
+    sys.stdout.flush()
     return pred
 
 filename = 'model.sav'
