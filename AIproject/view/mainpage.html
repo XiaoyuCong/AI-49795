@@ -40,7 +40,7 @@
     </form>
   </nav>
 
-  
+
 
   <div class="container m-3">
     <div class="row mb-3">
@@ -53,7 +53,7 @@
         </h4>
       </div>
     </div>
-    
+
     <div class="row">
       <div class="col ml-3">
         <form >
@@ -81,7 +81,7 @@
             <button id="submit" class="btn btn-outline-success take" onclick="submit()">submit</button>
           </div>
       </div>
-      
+
     </div>
   </div>
 
@@ -111,7 +111,7 @@
           <br>
 
           <div id="resultList">
-            
+
           </div>
       </div>
   </div>
@@ -124,7 +124,7 @@
       $(".select").hide();
       $(".take").show();
       getMedia();
-    })
+    });
     $("#btn-select").click(function() {
       let constraints = {
           video: {width: 500, height: 500},
@@ -133,12 +133,12 @@
 
       let video = document.getElementById("video");
 
-      let promise = navigator.mediaDevices.getUserMedia(constraints);
-      promise.then(function (MediaStream) {
-        MediaStream.stop();
-        MediaStream.getTracks()[0].stop();
-        MediaStream.getTracks()[1].stop();
-      });
+        let stream = video.srcObject;
+        let tracks = stream.getTracks();
+
+        tracks.forEach(function(track) {
+            track.stop();
+        });
       $(".take").hide();
       $(".select").show();
       /*let promise = navigator.mediaDevices.getUserMedia(constraints);
@@ -186,7 +186,7 @@
                     '<a href=' + url3 + 'target="_blank">' + '<label class="btn btn-outline-success" style="width:600px">' + songs[2] + '</label>' + '</a>' +
                     '<a href=' + url4 + 'target="_blank">' + '<label class="btn btn-outline-success" style="width:600px">' + songs[3] + '</label>' + '</a>' +
                     '<a href=' + url5 + 'target="_blank">' + '<label class="btn btn-outline-success" style="width:600px">' + songs[4] + '</label>' + '</a>';
-                  
+
                 $("#valence-container").empty();
                 $("#arousal-container").empty();
                 var valence = $('<span class="slider" id="valence" data-slider-min="-1" data-slider-max="1" data-slider-step="0.01" data-slider-value="0.6"></span>');
@@ -258,7 +258,7 @@
                           '<a href=' + url3 + 'target="_blank">' + '<label class="btn btn-outline-success" style="width:600px">' + songs[2] + '</label>' + '</a>' +
                           '<a href=' + url4 + 'target="_blank">' + '<label class="btn btn-outline-success" style="width:600px">' + songs[3] + '</label>' + '</a>' +
                           '<a href=' + url5 + 'target="_blank">' + '<label class="btn btn-outline-success" style="width:600px">' + songs[4] + '</label>' + '</a>';
-                        
+
                       $("#valence-container").empty();
                       $("#arousal-container").empty();
                       var valence = $('<span class="slider" id="valence" data-slider-min="-1" data-slider-max="1" data-slider-step="0.01" data-slider-value="0.6"></span>');
@@ -271,7 +271,7 @@
                       var arousal_slider = $("#arousal").slider();
                       $("#testInput").show();
                     console.log(songs);
-                    
+
                     }
                 }
                 }
@@ -293,7 +293,7 @@
             function getMedia() {
                 let constraints = {
                     video: {width: 500, height: 500},
-                    audio: true
+                    audio: false
                 };
 
                 let video = document.getElementById("video");
