@@ -26,6 +26,7 @@ const bucket = storage.bucket('emousic_image');
 
 app.post('/uploadImage', function(req,res){
 
+    res.setHeader('Access-Control-Allow-Origin', '*');
     const form = new multiparty.Form();
     form.parse(req,function(err,fields,files){
         console.log(files);
@@ -46,7 +47,8 @@ app.post('/uploadImage', function(req,res){
                 body: '{"url": ' + '"' + imageUrl + '"}',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Ocp-Apim-Subscription-Key' : subscriptionKey
+                    'Ocp-Apim-Subscription-Key' : subscriptionKey,
+                    'Access-Control-Allow-Origin': '*',
                 }
             };
 
@@ -80,6 +82,8 @@ app.post('/uploadImage', function(req,res){
                     console.log("neutral:" + neutral);
                     console.log("sadness:" + sadness);
                     console.log("surprise:" + surprise);
+                    console.log("python command:");
+                    console.log('python emotion.py ' + anger + ' ' + contempt + ' ' + disgust + ' ' + fear + ' ' + happiness + ' ' + neutral + ' ' + sadness + ' ' + surprise);
                     exec('python emotion.py ' + anger + ' ' + contempt + ' ' + disgust + ' ' + fear + ' ' + happiness + ' ' + neutral + ' ' + sadness + ' ' + surprise, (error,stdout,stderr)=>{
                         let valence = stdout.substring(13, stdout.length - 3);
                         let arousal = stdout.substring(2, 12);
