@@ -82,9 +82,8 @@ app.post('/uploadImage', function(req,res){
                     console.log("neutral:" + neutral);
                     console.log("sadness:" + sadness);
                     console.log("surprise:" + surprise);
-                    console.log("python command:");
-                    console.log('python emotion.py ' + anger + ' ' + contempt + ' ' + disgust + ' ' + fear + ' ' + happiness + ' ' + neutral + ' ' + sadness + ' ' + surprise);
-                    exec('python emotion.py ' + anger + ' ' + contempt + ' ' + disgust + ' ' + fear + ' ' + happiness + ' ' + neutral + ' ' + sadness + ' ' + surprise, (error,stdout,stderr)=>{
+                    exec('python emotion2.py ' + anger + ' ' + contempt + ' ' + disgust + ' ' + fear + ' ' + happiness + ' ' + neutral + ' ' + sadness + ' ' + surprise, (error,stdout,stderr)=>{
+                        console.log(stdout);
                         let valence = stdout.substring(13, stdout.length - 3);
                         let arousal = stdout.substring(2, 12);
                         console.log("valence: " + valence);
