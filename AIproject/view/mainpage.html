@@ -10,8 +10,10 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <meta http-equiv="Access-Control-Allow-Origin" content="*">
+        <script src="bootstrap-slider.min.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="bootstrap-slider.min.css">
+        <meta http-equiv="Access-Control-Allow-Origin" content="*">
   <style>
     .bg-head {
       color: #ffffff;
@@ -30,7 +32,6 @@
 
 <body>
 
-
   <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand" style="color:#ffffff">Emousic</a>
     <form method="get" action="http://www.google.com/search" class="form-inline" target="_blank">
@@ -39,33 +40,48 @@
     </form>
   </nav>
 
+  
+
   <div class="container m-3">
     <div class="row mb-3">
       <div class="col">
-        <h4>1. Upload your photo</h4>
+        <h4>
+          1. Upload your photo
+          <div id="loading" class="spinner-border text-success" role="status">
+              <span class="sr-only">Loading...</span>
+          </div>
+        </h4>
       </div>
     </div>
+    
     <div class="row">
       <div class="col ml-3">
         <form >
-          <label class="btn btn-outline-success">
+          <label id="btn-select" class="btn btn-outline-success">
             Select your image
             <input type="file" id="files" hidden name="files" accept="image/*" onchange="changImg(event)">
           </label>
           or
-          <label class="btn btn-outline-success" onclick="toTakePhoto()">
+          <label id="btn-take" class="btn btn-outline-success">
               take a photo now
-            </label>
+          </label>
           </br>
-          <img id="image" src="picture/demo.jpg" >
+          <div class="select">
+              <img id="image" src="picture/demo.jpg" >
+          </div>
           </br>
-          <label class="btn btn-outline-success" id="upload">
+          <label class="btn btn-outline-success select" id="upload">
             Upload this image
           </label>
         </form>
-
-
+        <div id="take">
+            <video id="video" class="take" width="500px" height="500px" autoplay="autoplay"></video>
+            <canvas id="canvas" class="take" width="500px" height="500px"></canvas>
+            <button id="snap" class="btn btn-outline-success take" onclick="takePhoto()">take this one</button>
+            <button id="submit" class="btn btn-outline-success take" onclick="submit()">submit</button>
+          </div>
       </div>
+      
     </div>
   </div>
 
@@ -73,17 +89,70 @@
     <div class="row">
       <div class="col">
         <h4>2. Get your result</h4>
-          <div id="testInput"></div>
-          <div id="resultList"></div>
+          <br>
+          <div id="testInput">
+            <div>
+                <span style="width:100px;height:25px;line-height:20px;font-weight:normal;" class="badge badge-success badge-pill">unpleasant</span>
+                <span id="valence-container">
+                  <span class="slider" id="valence" data-slider-min="-1" data-slider-max="1" data-slider-step="0.01" data-slider-value="0.6"></span>
+                </span>
+                <span style="width:100px;height:25px;line-height:20px;font-weight:normal;" class="badge badge-success badge-pill">pleasant</span>
+            </div>
+            <br>
+            <div>
+                <span style="width:100px;height:25px;line-height:20px;font-weight:normal;" class="badge badge-success badge-pill">calm</span>
+                <span id="arousal-container">
+                  <span class="slider" id="arousal" data-slider-min="-1" data-slider-max="1" data-slider-step="0.01" data-slider-value="0.6"></span>
+                </span>
+                <span style="width:100px;height:25px;line-height:20px;font-weight:normal;" class="badge badge-success badge-pill">excited</span>
+            </div>
+          </div>
+          <div id="resultList">
+            
+          </div>
       </div>
     </div>
   </div>
 
-  <script>
+ <script>
+    $("#testInput").hide();
+    $("#loading").hide();
+    $(".take").hide();
+    $("#btn-take").click(function() {
+      $(".select").hide();
+      $(".take").show();
+      getMedia();
+    })
+    $("#btn-select").click(function() {
+      let constraints = {
+          video: {width: 500, height: 500},
+          audio: true
+      };
 
+      let video = document.getElementById("video");
+
+      let promise = navigator.mediaDevices.getUserMedia(constraints);
+      promise.then(function (MediaStream) {
+        MediaStream.stop();
+        MediaStream.getTracks()[0].stop();
+        MediaStream.getTracks()[1].stop();
+      });
+      $(".take").hide();
+      $(".select").show();
+      /*let promise = navigator.mediaDevices.getUserMedia(constraints);
+      promise.then(function (MediaStream) {
+          video.srcObject = MediaStream;
+          $("#video").close();
+      });*/
+    })
+    //$("#resultList").hide();
+    //var mySlider = $("span.slider").slider();
+    //$("span.slider").attr("data-slider-value", "0");
+    var mySlider = $("span.slider").slider();
       let songs;
     $(document).ready(function(){
       $("#upload").click(function (){
+        $("#loading").show();
         let files = $("#files")[0].files[0];
         console.log(files);
         let formData = new FormData();
@@ -97,6 +166,7 @@
         {
           if (xmlHttp.readyState === 4)
           {
+            $("#loading").hide();
             //alert(xmlHttp.responseText);
             if(xmlHttp.responseText === "there is no face detected in the picture"){
               alert("there is no face detected in the picture");
@@ -116,10 +186,18 @@
                     '<a href=' + url4 + 'target="_blank">' + '<li>' + songs[3] + '</li>' + '</a>' +
                     '<a href=' + url5 + 'target="_blank">' + '<li>' + songs[4] + '</li>' + '</a>' +
                     '</ol>';
-                document.getElementById("testInput").innerHTML=
-                    '<i>valence(unpleasant->pleasant): ' + songs[6] + '</i>' + '<br>' +
-                    '<i>arousal(calm->excited): ' + songs[7] + '</i>'
-                    + '<br>' + '<br>';
+                  
+                $("#valence-container").empty();
+                $("#arousal-container").empty();
+                var valence = $('<span class="slider" id="valence" data-slider-min="-1" data-slider-max="1" data-slider-step="0.01" data-slider-value="0.6"></span>');
+                valence.attr("data-slider-value", songs[6]);
+                var arousal = $('<span class="slider" id="arousal" data-slider-min="-1" data-slider-max="1" data-slider-step="0.01" data-slider-value="0.6"></span>');
+                arousal.attr("data-slider-value", songs[7]);
+                $("#valence-container").append(valence);
+                $("#arousal-container").append(arousal);
+                var valence_slider = $("#valence").slider();
+                var arousal_slider = $("#arousal").slider();
+                $("#testInput").show();
               console.log(songs);
 
             }
@@ -128,9 +206,6 @@
       })
     });
 
-    function toTakePhoto() {
-      window.location.href='takePhoto.html';
-    }
     function changImg(e) {
       for (var i = 0; i < e.target.files.length; i++) {
         var file = e.target.files.item(i);
@@ -145,6 +220,88 @@
         }
       }
     }
+    function submit () {
+                var mycanvas = document.getElementById("canvas");
+                var base64Data = mycanvas.toDataURL();
+
+                var blob = dataURItoBlob(base64Data);
+
+                var fd = new FormData();
+                fd.append("files", blob);
+
+                var xmlHttp = new XMLHttpRequest();
+                //console.log(fd.values());
+                xmlHttp.open("POST", "http://127.0.0.1:8082/uploadImage");
+                //xmlHttp.setRequestHeader("Authorization", 'Bearer ' + localStorage.token);//设置请求header,按需设定，非必须
+                xmlHttp.send(fd);
+                //ajax
+                xmlHttp.onreadystatechange=function()
+                {
+                if (xmlHttp.readyState === 4)
+                {
+                    //alert(xmlHttp.responseText);
+                    if(xmlHttp.responseText === "there is no face detected in the picture"){
+                    alert("there is no face detected in the picture");
+                    }
+                    else{
+                        songs = xmlHttp.responseText.split('/');
+                        document.getElementById("resultList").innerHTML=
+                            '<ol>' + '<li>' + songs[0] + '</li>' +
+                            '<li>' + songs[1] + '</li>' +
+                            '<li>' + songs[2] + '</li>' +
+                            '<li>' + songs[3] + '</li>' +
+                            '<li>' + songs[4] + '</li>';
+                        document.getElementById("testInput").innerHTML=
+                            '<i>valence(unpleasant->pleasant): ' + songs[6] + '</i>' + '<br>' +
+                            '<i>arousal(calm->excited): ' + songs[7] + '</i>'
+                            + '<br>' + '<br>';
+                    console.log(songs);
+                    
+                    }
+                }
+                }
+            };
+            function dataURItoBlob (base64Data) {
+                var byteString;
+                if (base64Data.split(',')[0].indexOf('base64') >= 0)
+                    byteString = atob(base64Data.split(',')[1]);
+                else
+                    byteString = unescape(base64Data.split(',')[1]);
+                var mimeString = base64Data.split(',')[0].split(':')[1].split(';')[0];
+                var ia = new Uint8Array(byteString.length);
+                for (var i = 0; i < byteString.length; i++) {
+                    ia[i] = byteString.charCodeAt(i);
+                }
+                return new Blob([ia], {type: mimeString});
+            };
+
+            function getMedia() {
+                let constraints = {
+                    video: {width: 500, height: 500},
+                    audio: true
+                };
+
+                let video = document.getElementById("video");
+
+                let promise = navigator.mediaDevices.getUserMedia(constraints);
+                promise.then(function (MediaStream) {
+                    video.srcObject = MediaStream;
+                    video.play();
+                });
+            }
+
+          function takePhoto() {
+
+            let video = document.getElementById("video");
+            let canvas = document.getElementById("canvas");
+            let ctx = canvas.getContext('2d');
+            ctx.drawImage(video, 0, 0, 500, 500);
+            //var file = document.getElementById("file");
+            //var fReader = new FileReader();
+            //fReader.readAsDataURL(dataURLtoBlob(canvas.toDataURL()) );
+            //var image = document.getElementById("image");
+            //image.src = canvas.toDataURL("image/png");
+          }
   </script>
 
 
