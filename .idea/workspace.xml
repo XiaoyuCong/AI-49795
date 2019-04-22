@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81d31483-e2b6-467b-9147-85f3b32a688f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AIproject/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/AIproject/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AIproject/view/mainpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/AIproject/view/mainpage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AIproject/view/picture/demo.jpg" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,7 +21,8 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -34,15 +38,15 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="1800" />
-          <entry key="js" value="359" />
+          <entry key="html" value="1994" />
+          <entry key="js" value="457" />
           <entry key="py" value="42" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="1798" />
-          <entry key="JavaScript" value="359" />
+          <entry key="HTML" value="1992" />
+          <entry key="JavaScript" value="457" />
           <entry key="PLAIN_TEXT" value="42" />
           <entry key="RegExp" value="2" />
         </counts>
@@ -54,8 +58,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AIproject/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="36" lean-forward="true" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+            <state relative-caret-position="320">
+              <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -77,8 +81,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AIproject/emotion2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+            <state relative-caret-position="391">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -100,8 +104,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AIproject/view/mainpage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="295" column="32" lean-forward="true" selection-start-line="295" selection-start-column="32" selection-end-line="295" selection-end-column="32" />
+            <state relative-caret-position="596">
+              <caret line="206" column="17" selection-start-line="206" selection-start-column="17" selection-end-line="206" selection-end-column="17" />
               <folding>
                 <element signature="n#style#0;n#a#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -132,7 +136,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AIproject/view/takePhoto.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1304">
+            <state relative-caret-position="1598">
               <caret line="94" column="29" selection-start-line="94" selection-start-column="24" selection-end-line="94" selection-end-column="29" />
             </state>
           </provider>
@@ -144,19 +148,22 @@
     <findStrings>
       <find>key</find>
       <find>max_song =</find>
+      <find>replace</find>
+      <find>upload</find>
+      <find>alert</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/AIproject" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/AIproject/getSong.py" />
         <option value="$PROJECT_DIR$/AIproject/view/takePhoto.html" />
-        <option value="$PROJECT_DIR$/AIproject/app.js" />
         <option value="$PROJECT_DIR$/AIproject/emotion.py" />
         <option value="$PROJECT_DIR$/AIproject/emotion2.py" />
+        <option value="$PROJECT_DIR$/AIproject/app.js" />
         <option value="$PROJECT_DIR$/AIproject/view/mainpage.html" />
       </list>
     </option>
@@ -177,9 +184,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="309" />
-    <option name="y" value="50" />
-    <option name="width" value="1257" />
+    <option name="x" value="-1707" />
+    <option name="y" value="115" />
+    <option name="width" value="1591" />
     <option name="height" value="898" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -188,7 +195,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -211,6 +217,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -241,17 +248,18 @@
       <option name="presentableId" value="Default" />
       <updated>1554962436028</updated>
       <workItem from="1554962439705" duration="167000" />
+      <workItem from="1555893995891" duration="1067000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10462000" />
+    <option name="totallyTimeSpent" value="11529000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="309" y="50" width="1257" height="898" extended-state="0" />
+    <frame x="-1707" y="115" width="1591" height="898" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25349793" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20206586" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Project Explorer" order="2" />
       <window_info id="DB Browser" order="3" />
@@ -284,26 +292,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/AIproject/getSong.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AIproject/view/takePhoto.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1304">
-          <caret line="94" column="29" selection-start-line="94" selection-start-column="24" selection-end-line="94" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AIproject/clearData.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AIproject/faceDetection.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/AIproject/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -311,12 +299,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AIproject/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="36" lean-forward="true" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/AIproject/clearData.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/AIproject/emotion.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -327,18 +311,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AIproject/emotion2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+        <state relative-caret-position="391">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AIproject/faceDetection.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AIproject/getSong.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AIproject/music.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/AIproject/view/takePhoto.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1598">
+          <caret line="94" column="29" selection-start-line="94" selection-start-column="24" selection-end-line="94" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AIproject/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/AIproject/view/mainpage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="295" column="32" lean-forward="true" selection-start-line="295" selection-start-column="32" selection-end-line="295" selection-end-column="32" />
+        <state relative-caret-position="596">
+          <caret line="206" column="17" selection-start-line="206" selection-start-column="17" selection-end-line="206" selection-end-column="17" />
           <folding>
             <element signature="n#style#0;n#a#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />

@@ -30,6 +30,9 @@ app.post('/uploadImage', function(req,res){
     const form = new multiparty.Form();
     form.parse(req,function(err,fields,files){
         console.log(files);
+        if (!files['files']){
+            return;
+        }
         let tmpName = files['files'][0]['path'].split("/").slice(-1)[0];
         bucket.upload(files['files'][0]['path']).then( function v(){
             const imageUrl = `https://storage.googleapis.com/emousic_image/${tmpName}`;
