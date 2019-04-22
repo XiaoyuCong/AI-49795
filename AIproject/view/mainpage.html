@@ -154,9 +154,13 @@
       let songs;
     $(document).ready(function(){
       $("#upload").click(function (){
-        $("#loading").show();
-        let files = $("#files")[0].files[0];
-        console.log(files);
+          let files = $("#files")[0].files[0];
+          console.log(files);
+          if(files === undefined){
+              alert("Please select or take image before upload");
+              return
+          }
+          $("#loading").show();
         let formData = new FormData();
         formData.append("files",files);
         let xmlHttp = new XMLHttpRequest();
@@ -175,29 +179,31 @@
             }
             else{
                 songs = xmlHttp.responseText.split('/');
-                let url1 = "https://www.google.com/search?q=" + songs[0].replace(/ /g, "+");
-                let url2 = "https://www.google.com/search?q=" + songs[1].replace(/ /g, "+");
-                let url3 = "https://www.google.com/search?q=" + songs[2].replace(/ /g, "+");
-                let url4 = "https://www.google.com/search?q=" + songs[3].replace(/ /g, "+");
-                let url5 = "https://www.google.com/search?q=" + songs[4].replace(/ /g, "+");
-                document.getElementById("resultList").innerHTML=
-                    '<a href=' + url1 + 'target="_blank">' + '<label class="btn btn-outline-success" style="width:600px">' + songs[0] + '</label>' + '</a>' +
-                    '<a href=' + url2 + 'target="_blank">' + '<label class="btn btn-outline-success" style="width:600px">' + songs[1] + '</label>' + '</a>' +
-                    '<a href=' + url3 + 'target="_blank">' + '<label class="btn btn-outline-success" style="width:600px">' + songs[2] + '</label>' + '</a>' +
-                    '<a href=' + url4 + 'target="_blank">' + '<label class="btn btn-outline-success" style="width:600px">' + songs[3] + '</label>' + '</a>' +
-                    '<a href=' + url5 + 'target="_blank">' + '<label class="btn btn-outline-success" style="width:600px">' + songs[4] + '</label>' + '</a>';
+                if (songs.length >= 5) {
+                    let url1 = "http://www.google.com/search?q=" + songs[0].replace(/ /g, "+");
+                    let url2 = "http://www.google.com/search?q=" + songs[1].replace(/ /g, "+");
+                    let url3 = "http://www.google.com/search?q=" + songs[2].replace(/ /g, "+");
+                    let url4 = "http://www.google.com/search?q=" + songs[3].replace(/ /g, "+");
+                    let url5 = "http://www.google.com/search?q=" + songs[4].replace(/ /g, "+");
+                    document.getElementById("resultList").innerHTML =
+                        '<a href=' + url1 + 'target="_blank">' + '<label class="btn btn-outline-success" style="width:600px">' + songs[0] + '</label>' + '</a>' +
+                        '<a href=' + url2 + 'target="_blank">' + '<label class="btn btn-outline-success" style="width:600px">' + songs[1] + '</label>' + '</a>' +
+                        '<a href=' + url3 + 'target="_blank">' + '<label class="btn btn-outline-success" style="width:600px">' + songs[2] + '</label>' + '</a>' +
+                        '<a href=' + url4 + 'target="_blank">' + '<label class="btn btn-outline-success" style="width:600px">' + songs[3] + '</label>' + '</a>' +
+                        '<a href=' + url5 + 'target="_blank">' + '<label class="btn btn-outline-success" style="width:600px">' + songs[4] + '</label>' + '</a>';
 
-                $("#valence-container").empty();
-                $("#arousal-container").empty();
-                var valence = $('<span class="slider" id="valence" data-slider-min="-1" data-slider-max="1" data-slider-step="0.01" data-slider-value="0.6"></span>');
-                valence.attr("data-slider-value", songs[6]);
-                var arousal = $('<span class="slider" id="arousal" data-slider-min="-1" data-slider-max="1" data-slider-step="0.01" data-slider-value="0.6"></span>');
-                arousal.attr("data-slider-value", songs[7]);
-                $("#valence-container").append(valence);
-                $("#arousal-container").append(arousal);
-                var valence_slider = $("#valence").slider();
-                var arousal_slider = $("#arousal").slider();
-                $("#testInput").show();
+                    $("#valence-container").empty();
+                    $("#arousal-container").empty();
+                    var valence = $('<span class="slider" id="valence" data-slider-min="-1" data-slider-max="1" data-slider-step="0.01" data-slider-value="0.6"></span>');
+                    valence.attr("data-slider-value", songs[6]);
+                    var arousal = $('<span class="slider" id="arousal" data-slider-min="-1" data-slider-max="1" data-slider-step="0.01" data-slider-value="0.6"></span>');
+                    arousal.attr("data-slider-value", songs[7]);
+                    $("#valence-container").append(valence);
+                    $("#arousal-container").append(arousal);
+                    var valence_slider = $("#valence").slider();
+                    var arousal_slider = $("#arousal").slider();
+                    $("#testInput").show();
+                }
               console.log(songs);
 
             }
